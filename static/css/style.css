@@ -733,3 +733,32 @@ p, h1, h2, h3, td, li, .digest-items, .iyasaka-text{
 @media (max-width:720px){
   .concept-keywords{font-size:.75rem; line-height:2;}
 }
+
+/* ===== ギャラリー先頭：ボックス全体写真（横幅いっぱい） ===== */
+.gallery-lead{margin-bottom:22px}
+.lead-photo{
+  aspect-ratio:16/9;min-height:0;height:auto;
+  border-radius:var(--radius);
+}
+.gallery-lead-caption{
+  text-align:center;color:var(--gold-light);
+  font-family:var(--serif);font-size:.92rem;letter-spacing:.08em;
+  margin-top:14px;line-height:2;
+}
+@media (max-width:720px){
+  .lead-photo{aspect-ratio:16/10}
+  .gallery-lead-caption{font-size:.85rem}
+}
+
+/* ===== ギャラリー：全体写真（先頭・横幅いっぱい） ===== */
+.gallery-lead{margin-bottom:26px}
+.lead-photo{
+  aspect-ratio:16/9;
+  min-height:0;height:auto;
+  background-color:#1d1512;
+}
+@media(max-width:720px){ .lead-photo{aspect-ratio:4/3} }
+.gallery-lead-caption{
+  margin-top:12px;text-align:center;
+  color:var(--text-dim,#a89c8c);font-size:.88rem;letter-spacing:.04em;
+}
