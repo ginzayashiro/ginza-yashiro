@@ -12,7 +12,7 @@
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <img src="{{ url_for('static', filename='img/logo-emblem-white.png') }}" alt="銀座やしろ エンブレム" class="hero-logo">
-    <p class="hero-sub">GINZA &mdash; MINI CLUB SNACK</p>
+    <p class="hero-sub">GINZA &mdash; SNACK &amp; MINI CLUB</p>
     <h1 class="hero-title">銀座やしろ</h1>
     <p class="hero-desc"><span class="nb">銀座8丁目、</span><span class="nb">静かなビルの3階。</span><br><span class="nb">明るく穏やかな時間が流れる、</span><span class="nb">小さな隠れ家。</span></p>
     <p class="hero-iyasaka"><span class="nb">今宵も、</span><span class="nb">あなたの「<ruby>弥栄<rt>いやさか</rt></ruby>」を。</span></p>
@@ -31,6 +31,7 @@
       <p class="en">CONCEPT</p>
       <h2><span class="nb">ちいさな店の、</span><span class="nb">あたたかな心づかい。</span></h2>
       <p class="concept-lead"><span class="nb">いらっしゃいませ。</span><span class="nb">ようこそ、やしろへ。</span></p>
+      <p class="concept-keywords">銀座のスナック「やしろ」は、ミニクラブの上質さとスナックの気さくさをあわせ持つ小さなお店です。初めての方も、女性も、お一人様も、明朗会計で安心してお過ごしいただけます。</p>
     </div>
     <div class="concept-grid">
       <!-- 📷 写真枠 PH-08: 店の看板・内装（コンセプト用）
@@ -396,7 +397,7 @@
       </div>
       <div class="access-map">
         <iframe
-          src="https://www.google.com/maps?q={{ shop.map_query | urlencode }}&output=embed"
+          src="https://www.google.com/maps?q={{ shop.map_query | urlencode }}&output=embed&hl=ja"
           width="100%" height="100%" style="border:0; min-height:360px;" allowfullscreen loading="lazy"
           referrerpolicy="no-referrer-when-downgrade" title="銀座やしろ 地図"></iframe>
         <a href="{{ shop.maps_url }}" target="_blank" rel="noopener" class="btn btn-map">📍 Googleマップで開く・経路を調べる</a>

@@ -43,7 +43,7 @@ SHOP = {
     "x_url": os.environ.get("X_URL", "https://x.com/ginza_yashiro"),
     "litlink_url": os.environ.get("LITLINK_URL", "https://lit.link/KaoriLinoLeoGinza"),
     "map_query": "銀座やしろ 東京都中央区銀座8-7-21 三恵ビル3階",
-    "maps_url": "https://maps.app.goo.gl/vAEweCniYg9m4dvF9",
+    "maps_url": "https://maps.app.goo.gl/QyfV3uBU2BAzeWUV6",
 }
 
 ADMIN_KEY = os.environ.get("ADMIN_KEY", "yashiro-admin-2026")
