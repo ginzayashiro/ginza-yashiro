@@ -73,7 +73,6 @@
         <p class="mama-intro">1975年、茨城に生まれ、<br>
         幼い頃から、身体で表現することを覚えました。<br>
         クラシックバレエ、体操、空手、ジャズダンス。<br>
-        国体の代表候補に選ばれるほど、<br>
         競技に打ち込んだ日々が、今の礎です。</p>
 
         <p>一度は銀行員として、数字と向き合う日々。<br>
@@ -81,26 +80,29 @@
         スポーツインストラクターの道へ転身。<br>
         ダンサーとして、モデルとして、<br>
         舞台の袖でも、光の中でも、<br>
-        人の輝く瞬間を支え続けてきました。</p>
+        人の輝く瞬間と向き合う機会を頂きました。</p>
 
         <p>トレーナー時代、生徒さんたちに<br>
-        愛を込めて呼ばれたのが、<strong>「鬼軍曹Rico」</strong>。<br>
+        愛を込めて呼ばれたのが、「<strong>鬼軍曹Rico</strong>」。<br>
         潔く、サバサバと、漢（おとこ）勝りに。<br>
-        ハッキリものを言う、その真っ直ぐさの奥に、<br>
-        誰よりも温かな愛があるからこそ、<br>
-        人はまた、会いに来るのです。</p>
+        ハッキリものを言う真っ直ぐさの奥に、<br>
+        誰よりも温かな愛は持ち続けたい…。</p>
 
-        <p>やがて BBP（Beauty Body Project）を立ち上げ、<br>
+        <p>誠実であり、良き人であることこそ、<br>
+        経営者としてもママとしても、<br>
+        1番大切にしています。</p>
+
+        <p>個人事業では、BBP（Beauty Body Project）を立ち上げ、<br>
         企業の健康を支える出張エクササイズや、<br>
         ファスティングマイスターとしての食育指導まで。</p>
 
         <p>そして2025年、50歳の節目に、<br>
         銀座8丁目に小さなミニクラブ、<br>
-        「銀座やしろ」を開きました。</p>
+        「銀座やしろ」を開きました。<br>
+        迷って、遠回りして、<br>
+        だからこそ、ここにいる意味があります。</p>
 
-        <p>迷って、遠回りして、<br>
-        だからこそ、ここにいる意味がある。<br>
-        ママに面白スイッチが入った夜は、<br>
+        <p>ママに面白スイッチが入った夜は、<br>
         やしろは空前のエンタメ館に変わる。<br>
         笑って、泣いて、歌って、乾杯して。</p>
 
@@ -216,7 +218,7 @@
         <span class="nb"><strong>愉快なママ＆スタッフへの応援</strong>にも、</span><span class="nb">ぜひ。</span></p>
         <p><span class="nb">指名スタッフとメッセージ、</span><span class="nb">開栓のタイミングを、</span><span class="nb">選ぶだけ。</span><br>
         <span class="nb">開栓の瞬間は</span><span class="nb"><strong>Instagramライブ</strong> で、</span><span class="nb">離れた場所から、</span><span class="nb">ご一緒いただけます。</span></p>
-        <a href="/order" class="btn btn-gold btn-big">🍾 遠隔オーダーへ進む</a>
+        <a href="/order{% if request.args.get('preview') == '1' %}?preview=1{% endif %}" class="btn btn-gold btn-big">🍾 遠隔オーダーへ進む</a>
       </div>
       <!-- 📷 写真枠 PH-02: 開栓シーン
            撮影シチュエーション: スタッフがシャンパンを開栓する瞬間。手元アップ＋グラス。温かい照明で。縦構図推奨 -->
@@ -310,7 +312,7 @@
       </div>
     </div>
     <div class="center" style="margin-top:36px;">
-      <a href="/order" class="btn btn-ghost">全メニューは遠隔オーダーページでご覧いただけます</a>
+      <a href="/order{% if request.args.get('preview') == '1' %}?preview=1{% endif %}" class="btn btn-ghost">全メニューは遠隔オーダーページでご覧いただけます</a>
     </div>
   </div>
 </section>

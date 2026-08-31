@@ -32,7 +32,7 @@
       <a href="/#staff">スタッフ</a>
       <a href="/#access">アクセス</a>
       <a href="/recruit">採用情報</a>
-      <a href="/order" class="nav-cta">遠隔オーダー</a>
+      <a href="/order{% if request.args.get('preview') == '1' %}?preview=1{% endif %}" class="nav-cta">遠隔オーダー</a>
     </nav>
   </div>
 </header>
@@ -40,7 +40,7 @@
 {% if request.args.get('preview') == '1' %}
 <div class="notice-bar" role="note">
   <span class="notice-icon">👷‍♀️</span>
-  <span class="notice-text">ただいまサイト工事中です。<strong>2026年9月7日（月）オープン予定</strong>。遠隔オーダーの先行ご予約はLINE・メールで承ります。</span>
+  <span class="notice-text">ただいまサイト工事中です。<strong>2026年9月7日（月）ホームページ公開予定</strong>。遠隔オーダーの先行ご予約はLINE・メールで承ります。</span>
 </div>
 {% endif %}
 
@@ -68,14 +68,14 @@
     </div>
     <div class="footer-nav">
       <a href="/#concept">コンセプト</a>
-      <a href="/order">遠隔オーダー</a>
+      <a href="/order{% if request.args.get('preview') == '1' %}?preview=1{% endif %}">遠隔オーダー</a>
       <a href="/#access">アクセス</a>
     </div>
   </div>
   <p class="copyright">&copy; 銀座やしろ All Rights Reserved.</p>
 </footer>
 
-<a href="/order" class="floating-cta" aria-label="遠隔オーダーへ">
+<a href="/order{% if request.args.get('preview') == '1' %}?preview=1{% endif %}" class="floating-cta" aria-label="遠隔オーダーへ">
   <span class="fc-icon">🍾</span><span class="fc-text">遠隔オーダー</span>
 </a>
 
