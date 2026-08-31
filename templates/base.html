@@ -3,8 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}銀座やしろ | 銀座のミニクラブスナック{% endblock %}</title>
-  <meta name="description" content="銀座8丁目のミニクラブスナック「銀座やしろ」。{% block description %}落ち着いた大人の空間で心のこもったおもてなしを。遠隔オーダー・シャンパンギフトも承ります。{% endblock %}">
+  <title>{% block title %}銀座やしろ | 銀座のミニクラブ・スナック（8丁目・隠れ家）{% endblock %}</title>
+  <meta name="description" content="銀座8丁目のミニクラブ・スナック「銀座やしろ」。{% block description %}気さくで楽しい、アットホームなお店。明朗会計で女性のお客様やお一人様も安心。社会人経験豊富な茨城県出身のオーナーママがお迎えします。シャンパンの遠隔オーダー（オンラインでお酒を贈る）も承ります。{% endblock %}">
+  <meta name="keywords" content="銀座 スナック,銀座 ミニクラブ,銀座8丁目 スナック,銀座 隠れ家,銀座 一人飲み,銀座 女性客,明朗会計 スナック,シャンパン 遠隔オーダー,オンライン お酒を贈る,銀座 接待 アットホーム,銀座やしろ">
+  <meta name="author" content="銀座やしろ">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ginza-yashiro.onrender.com{{ request.path }}">
+  <!-- OGP（SNSでシェアされた時の表示） -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="銀座やしろ">
+  <meta property="og:title" content="{% block og_title %}銀座やしろ | 銀座8丁目のミニクラブ・スナック{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}銀座8丁目の隠れ家ミニクラブ。気さくで楽しいアットホームな空間。明朗会計・女性歓迎・お一人様も。シャンパン遠隔オーダー可。{% endblock %}">
+  <meta property="og:url" content="https://ginza-yashiro.onrender.com{{ request.path }}">
+  <meta property="og:image" content="https://ginza-yashiro.onrender.com/static/img/logo-full-white.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- 構造化データ（Googleの検索結果をリッチに） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BarOrPub",
+    "name": "銀座やしろ",
+    "alternateName": "GINZA YASHIRO",
+    "description": "銀座8丁目のミニクラブ・スナック。気さくで楽しいアットホームなお店。明朗会計・女性歓迎。シャンパン遠隔オーダー対応。",
+    "url": "https://ginza-yashiro.onrender.com/",
+    "telephone": "+81-3-3289-5223",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "銀座8-7-21 三恵ビル3階",
+      "addressLocality": "中央区",
+      "addressRegion": "東京都",
+      "postalCode": "104-0061",
+      "addressCountry": "JP"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "屋代佳織",
+      "description": "オーナーママ。元銀行員・元フィットネストレーナー・元ダンサー。茨城県出身。"
+    },
+    "openingDate": "2025-03",
+    "servesCuisine": "シャンパン・ワイン・ウイスキー・焼酎",
+    "sameAs": [
+      "https://www.instagram.com/ginza.yashiro/",
+      "https://x.com/ginza_yashiro"
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
