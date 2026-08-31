@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}ご注文ありがとうございます | 銀座やしろ{% endblock %}
+{% block body_class %}page-success{% endblock %}
+{% block content %}
+
+<section class="success-wrap">
+  <div class="container narrow">
+    <div class="success-card">
+      <div class="success-icon">🍾</div>
+      <h1>ご注文を受け付けました</h1>
+
+      {% if order %}
+      <table class="success-table">
+        <tr><th>注文番号</th><td>{{ order["id"] }}</td></tr>
+        <tr><th>お名前</th><td>{{ order["customer_name"] }}</td></tr>
+        <tr><th>指名スタッフ</th><td>{{ order["staff"] or "指名なし" }}</td></tr>
+        <tr><th>開栓タイミング</th><td>{{ "すぐに開栓" if order["open_timing"] == "now" else "日時指定：" ~ order["open_at"] }}</td></tr>
+        <tr><th>合計金額</th><td>¥{{ "{:,}".format(order["total"]) }}</td></tr>
+      </table>
+
+      <div class="next-step">
+        <h2>次のステップ</h2>
+        <ol>
+          <li>店舗から<strong>エアペイの決済リンク</strong>をメールまたはLINEでお送りします。</li>
+          <li>リンク先でお支払いをお済ませください。</li>
+          <li>ご入金確認後、ご希望のタイミングで開栓いたします。Instagramライブ配信のご案内もお送りします。</li>
+        </ol>
+      </div>
+      {% else %}
+      <p>ご注文情報が見つかりませんでした。お手数ですが店舗までお問い合わせください。</p>
+      {% endif %}
+
+      <div class="success-actions">
+        <a href="/" class="btn btn-ghost">トップページへ</a>
+        <a href="/order" class="btn btn-gold">続けて注文する</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

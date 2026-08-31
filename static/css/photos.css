@@ -1,0 +1,109 @@
+/* =====================================================
+   写真差し替え用ファイル（photos.css）
+   -----------------------------------------------------
+   撮影した写真を「static/img/」フォルダに入れ、
+   下のブロックのコメント（/* */）を外すだけで反映されます。
+   ファイル名は PHOTO_GUIDE.md の一覧と一致させてください。
+   ===================================================== */
+
+/* ---------- コンセプト欄（店の看板・内装 PH-08）----------
+.photo-slot[data-photo="concept-shop"]{
+  background-image:url('/static/img/concept-shop.jpg');
+  background-size:cover; background-position:center; border:none;
+}
+.photo-slot[data-photo="concept-shop"] .photo-slot-label{ display:none; }
+---------- */
+
+/* ★設定済み：ママ（スタッフ紹介・笑顔） */
+.photo-slot[data-photo="staff-1"]{
+  background-image:url('/static/img/staff-1.jpg');
+  background-size:cover; background-position:center 25%; border:none;
+}
+.photo-slot[data-photo="staff-1"] .photo-slot-label{ display:none; }
+
+/* ★設定済み：ママ（コンセプト・オフィシャル） */
+.photo-slot[data-photo="mama-portrait"]{
+  background-image:url('/static/img/mama-portrait.jpg');
+  background-size:cover; background-position:center 20%; border:none;
+}
+.photo-slot[data-photo="mama-portrait"] .photo-slot-label{ display:none; }
+
+/* ---------- 以下は、写真が撮れたらコメントを外して有効化 ----------
+
+   PH-01 店内メイン
+.photo-slot[data-photo="hero-main"]{
+  background-image:url('/static/img/hero-main.jpg');
+  background-size:cover; background-position:center; border:none;
+}
+
+   PH-02 開栓シーン
+.photo-slot[data-photo="opening-scene"]{
+  background-image:url('/static/img/opening-scene.jpg');
+  background-size:cover; background-position:center; border:none;
+}
+
+   PH-04 カウンター席
+.photo-slot[data-photo="counter"]{
+  background-image:url('/static/img/counter.jpg');
+  background-size:cover; background-position:center; border:none;
+}
+
+   PH-05 ボックス席
+.photo-slot[data-photo="table"]{
+  background-image:url('/static/img/table.jpg');
+  background-size:cover; background-position:center; border:none;
+}
+
+   PH-06 ボトル棚
+.photo-slot[data-photo="bottles"]{
+  background-image:url('/static/img/bottles.jpg');
+  background-size:cover; background-position:center; border:none;
+}
+
+   PH-07 入口・看板
+.photo-slot[data-photo="entrance"]{
+  background-image:url('/static/img/entrance.jpg');
+  background-size:cover; background-position:center; border:none;
+}
+
+   スタッフ2人目以降（staff-2, staff-3 ...）
+.photo-slot[data-photo="staff-2"]{
+  background-image:url('/static/img/staff-2.jpg');
+  background-size:cover; background-position:center 25%; border:none;
+}
+
+---------- ここまで ---------- */
+
+/* 有効化した写真は、必ず撮影ガイドのラベルを非表示にする */
+.photo-slot[style*="background-image"] .photo-slot-label,
+.photo-slot.has-photo .photo-slot-label{ display:none; }
+
+/* =====================================================
+   スマホ表示：人物写真は「全体が見える」表示に切替
+   （背景・風景写真は従来通り cover = トリミングOK）
+   ===================================================== */
+@media (max-width: 720px){
+  /* オーナーママ写真：全身が収まるように */
+  .photo-slot[data-photo="mama-portrait"]{
+    background-size:cover !important;
+    background-position:center 35% !important;
+  }
+  .mama-photo-small{ height:auto; aspect-ratio:3/2; }
+
+  /* スタッフ写真：顔・全身が切れないように */
+  .photo-slot[data-photo^="staff-"]{
+    background-size:contain !important;
+    background-repeat:no-repeat !important;
+    background-position:center !important;
+    background-color:#1d1512;
+  }
+  .staff-photo{ min-height:0; aspect-ratio:3/4; }
+
+  /* 将来の人物系写真（コンセプト等）にも同じ扱いを用意 */
+  .photo-slot.person-photo{
+    background-size:contain !important;
+    background-repeat:no-repeat !important;
+    background-position:center !important;
+    background-color:#1d1512;
+  }
+}

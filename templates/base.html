@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}銀座やしろ | 銀座のミニクラブスナック{% endblock %}</title>
+  <meta name="description" content="銀座8丁目のミニクラブスナック「銀座やしろ」。{% block description %}落ち着いた大人の空間で心のこもったおもてなしを。遠隔オーダー・シャンパンギフトも承ります。{% endblock %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=14">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/photos.css') }}?v=14">
+  {% block head %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a class="brand" href="/">
+      <img src="{{ url_for('static', filename='img/logo-emblem-white.png') }}" alt="銀座やしろ" class="brand-logo">
+      <span class="brand-name">銀座やしろ</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="メニュー" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav" id="mainNav">
+      <a href="/#concept">コンセプト</a>
+      <a href="/#mama">オーナーママ</a>
+      <a href="/#system">料金システム</a>
+      <a href="/#first-visit">初めての方へ</a>
+      <a href="/#menu">メニュー</a>
+      <a href="/#staff">スタッフ</a>
+      <a href="/#access">アクセス</a>
+      <a href="/recruit">採用情報</a>
+      <a href="/order" class="nav-cta">遠隔オーダー</a>
+    </nav>
+  </div>
+</header>
+
+{% if request.args.get('preview') == '1' %}
+<div class="notice-bar" role="note">
+  <span class="notice-icon">👷‍♀️</span>
+  <span class="notice-text">ただいまサイト工事中です。<strong>2026年9月7日（月）オープン予定</strong>。遠隔オーダーの先行ご予約はLINE・メールで承ります。</span>
+</div>
+{% endif %}
+
+<main>
+  {% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="{{ url_for('static', filename='img/logo-emblem-white.png') }}" alt="銀座やしろ" class="footer-logo">
+      <p class="footer-name">銀座やしろ</p>
+      <p class="footer-tag">GINZA YASHIRO &mdash; mini club snack</p>
+      <div class="footer-sns">
+        {% if shop.instagram_url %}<a href="{{ shop.instagram_url }}" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>{% endif %}
+        {% if shop.x_url %}<a href="{{ shop.x_url }}" target="_blank" rel="noopener" aria-label="X">X</a>{% endif %}
+        {% if shop.litlink_url %}<a href="{{ shop.litlink_url }}" target="_blank" rel="noopener" aria-label="lit.link">lit.link</a>{% endif %}
+      </div>
+    </div>
+    <div class="footer-info">
+      <p>〒{{ shop.zip }} {{ shop.address }}</p>
+      <p>LINE <a href="{{ shop.line_url }}" target="_blank" rel="noopener">お友だち追加はこちら（24時間受付）</a></p>
+      <p>MAIL <a href="mailto:{{ shop.email }}">{{ shop.email }}</a></p>
+      <p>TEL <a href="tel:{{ shop.tel | replace('-', '') }}">{{ shop.tel }}</a> <small>（営業時間内のみ）</small></p>
+    </div>
+    <div class="footer-nav">
+      <a href="/#concept">コンセプト</a>
+      <a href="/order">遠隔オーダー</a>
+      <a href="/#access">アクセス</a>
+    </div>
+  </div>
+  <p class="copyright">&copy; 銀座やしろ All Rights Reserved.</p>
+</footer>
+
+<a href="/order" class="floating-cta" aria-label="遠隔オーダーへ">
+  <span class="fc-icon">🍾</span><span class="fc-text">遠隔オーダー</span>
+</a>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

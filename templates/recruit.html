@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% block title %}採用情報 | 銀座やしろ{% endblock %}
+{% block body_class %}page-recruit{% endblock %}
+
+{% block content %}
+<section class="section recruit-hero">
+  <div class="container">
+    <div class="section-head">
+      <p class="en">RECRUIT</p>
+      <h2>一緒に、輝きませんか。</h2>
+      <p class="recruit-lead">
+        銀座八丁目の小さなクラブスナック<br class="sp-only">
+        「銀座やしろ」では、<br>
+        一緒にお店をつくってくれる仲間を<br class="sp-only">
+        募集しています。
+      </p>
+    </div>
+    <p class="recruit-intro">
+      経験よりも、人柄を大切にしています。<br>
+      「接客が好き」「人を喜ばせることが好き」——<br>
+      そんな気持ちがあれば、大歓迎です。
+    </p>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="container">
+
+    <div class="recruit-terms">
+      <h3>募集職種</h3>
+
+      <div class="recruit-role">
+        <p class="recruit-role-title">① ヘルプスタッフ</p>
+        <ul class="recruit-list">
+          <li>時給 3,000円〜（昇給制度あり）</li>
+          <li>ボトルバック 10% ／ 同伴バック 3,000円</li>
+          <li>ノルマなし・未経験歓迎</li>
+          <li>センス＆なんでも努力できる子優遇</li>
+          <li>白ブラウス＆黒スカート レンタルあり</li>
+          <li>昼職との掛け持ちスタッフ多数</li>
+        </ul>
+      </div>
+
+      <div class="recruit-role">
+        <p class="recruit-role-title">② 売上ホステス</p>
+        <p class="recruit-role-sub">ご自身のお客様をお持ちの女性、優遇します</p>
+        <ul class="recruit-list">
+          <li><strong>売上小計 50%バック</strong>（小計折半システム）</li>
+          <li>お客様がご来店される日のみの出勤でOK</li>
+          <li>在籍店に配慮してご相談可能・秘密厳守</li>
+          <li>明るく落ち着いた小箱、ママのいるアットホームなお店です</li>
+        </ul>
+      </div>
+
+      <div class="recruit-role">
+        <p class="recruit-role-title">③ チーママ候補</p>
+        <ul class="recruit-list">
+          <li>お店を一緒に背負ってくださる方を募集します</li>
+          <li>条件・待遇は小計折半が基本。詳しくはお問い合わせください</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="recruit-terms">
+      <h3>募集要項</h3>
+      <table class="recruit-table">
+        <tr><th>時給</th><td>3,000円〜<br><small>頑張りはしっかり評価。昇給制度があります。</small></td></tr>
+        <tr><th>各種バック<br><small>※ヘルプスタッフ</small></th><td>ボトルバック 10% ／ 同伴バック 3,000円</td></tr>
+        <tr><th>勤務時間</th><td>平日 20:00〜25:00<br>週1日〜OK ／ 終電上がりOK</td></tr>
+        <tr><th>給与</th><td>月末締め・翌月10日振込支給<br><small>厚生費 月5,000円差引 ／ ※日払いは体験入店のみ</small></td></tr>
+        <tr><th>その他</th><td>送りはありません。<br><small>※店都合で終電に間に合わなかった場合は、タクシー代を支給します。</small></td></tr>
+      </table>
+    </div>
+
+    <div class="recruit-terms">
+      <h3>私たちが大切にしていること</h3>
+      <ul class="recruit-heart">
+        <li>人を楽しませることが好き</li>
+        <li>真面目に頑張れること</li>
+        <li>チームワークを楽しめること</li>
+        <li>何か一つ、自分らしい魅力や特技があること</li>
+        <li>お酒が大好きで、お酒と上手に付き合えること</li>
+        <li>体育会系・サービス旺盛系・面白系、大歓迎</li>
+      </ul>
+      <p class="recruit-note" style="text-align:center">経験より、人柄を大切にしています。</p>
+    </div>
+
+    <div class="recruit-terms">
+      <h3>オーナーママについて</h3>
+      <div class="recruit-mama-box">
+        <div class="recruit-mama-photo">
+          <img src="{{ url_for('static', filename='img/mama-recruit.jpg') }}" alt="オーナーママ 屋代佳織">
+        </div>
+        <p class="recruit-mama-name">屋代佳織</p>
+        <p class="recruit-mama-career">元銀行員 ／ 元フィットネストレーナー ／ 元ダンサー＆シンガー</p>
+        <p class="recruit-mama-msg">異色の経験を活かし、<br class="sp-only">笑顔あふれるお店づくりをしています。</p>
+      </div>
+    </div>
+
+    <div class="recruit-cta">
+      <p class="recruit-cta-text">
+        🌸 まずは見学だけでも、大歓迎 🌸<br>
+        ご応募・ご質問は、お気軽にどうぞ。
+      </p>
+      <div class="fv-actions">
+        <a href="{{ shop.line_url }}" target="_blank" rel="noopener" class="btn btn-line">LINEで応募・相談する</a>
+        <a href="mailto:{{ shop.email }}?subject=求人のお問い合わせ" class="btn btn-ghost">✉️ メールで応募する</a>
+      </div>
+      <p class="recruit-note">InstagramのDMからでもOKです</p>
+      <div class="fv-actions" style="margin-top:14px">
+        <a href="{{ shop.instagram_url }}" target="_blank" rel="noopener" class="btn btn-ghost">📷 InstagramでDMする</a>
+      </div>
+      <p class="recruit-addr">
+        銀座やしろ<br>
+        〒104-0061 東京都中央区銀座8-7-21 三恵ビル3階
+      </p>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

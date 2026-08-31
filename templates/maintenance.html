@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>銀座やしろ｜2026年9月7日 オープン</title>
+<meta name="description" content="銀座8丁目に誕生するミニクラブスナック「銀座やしろ」。2026年9月7日（月）オープン予定。ただいま準備中です。">
+<link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#14100d;
+    --bg2:#1d1813;
+    --gold:#c9a86a;
+    --gold-soft:#e3cfa4;
+    --text:#efe9df;
+    --muted:#a89d8c;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    font-family:'Shippori Mincho', 'Noto Sans JP', serif;
+    background:
+      radial-gradient(1200px 700px at 50% -10%, rgba(201,168,106,.10), transparent 60%),
+      radial-gradient(900px 600px at 50% 115%, rgba(201,168,106,.07), transparent 60%),
+      linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+    color:var(--text);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:32px 20px;
+  }
+  .wrap{
+    text-align:center;
+    max-width:640px;
+    width:100%;
+  }
+  .emblem{
+    width:120px;
+    height:120px;
+    margin:0 auto 28px;
+    border-radius:50%;
+    border:1px solid rgba(201,168,106,.45);
+    padding:10px;
+    background:rgba(0,0,0,.25);
+    box-shadow:0 0 60px rgba(201,168,106,.12);
+  }
+  .emblem img{width:100%;height:100%;object-fit:contain;display:block}
+  .rule{
+    width:72px;height:1px;margin:0 auto 22px;
+    background:linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  h1{
+    font-size:clamp(30px, 7vw, 44px);
+    letter-spacing:.28em;
+    text-indent:.28em;
+    font-weight:600;
+    color:var(--gold-soft);
+    margin-bottom:10px;
+  }
+  .sub{
+    font-family:'Noto Sans JP', sans-serif;
+    font-size:11px;
+    letter-spacing:.42em;
+    text-indent:.42em;
+    color:var(--muted);
+    margin-bottom:38px;
+  }
+  .notice{
+    display:inline-block;
+    font-family:'Noto Sans JP', sans-serif;
+    font-size:12px;
+    letter-spacing:.3em;
+    text-indent:.3em;
+    color:var(--gold);
+    border:1px solid rgba(201,168,106,.4);
+    border-radius:999px;
+    padding:9px 22px 9px 24px;
+    margin-bottom:26px;
+  }
+  .open-date{
+    font-size:clamp(22px, 5vw, 30px);
+    letter-spacing:.14em;
+    color:var(--text);
+    margin-bottom:6px;
+  }
+  .open-date .dow{font-size:.62em;color:var(--muted);margin-left:.4em}
+  .poem{
+    margin:34px auto 40px;
+    font-size:15px;
+    line-height:2.6;
+    letter-spacing:.12em;
+    color:var(--text);
+  }
+  .poem span{color:var(--muted)}
+  .links{
+    display:flex;
+    gap:14px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-bottom:44px;
+  }
+  .btn{
+    font-family:'Noto Sans JP', sans-serif;
+    display:inline-flex;align-items:center;gap:8px;
+    text-decoration:none;
+    font-size:13px;letter-spacing:.14em;
+    padding:13px 26px;
+    border-radius:999px;
+    border:1px solid rgba(201,168,106,.5);
+    color:var(--gold-soft);
+    transition:all .3s ease;
+  }
+  .btn:hover{background:rgba(201,168,106,.12);transform:translateY(-2px)}
+  .addr{
+    font-family:'Noto Sans JP', sans-serif;
+    font-size:12px;
+    letter-spacing:.1em;
+    line-height:2.1;
+    color:var(--muted);
+  }
+  .addr b{color:var(--text);font-weight:500}
+  .fade{opacity:0;transform:translateY(14px);animation:rise 1.1s ease forwards}
+  .fade.d1{animation-delay:.15s}.fade.d2{animation-delay:.3s}
+  .fade.d3{animation-delay:.45s}.fade.d4{animation-delay:.6s}
+  .fade.d5{animation-delay:.75s}.fade.d6{animation-delay:.9s}
+  @keyframes rise{to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="emblem fade"><img src="{{ url_for('static', filename='img/logo-emblem-white.png') }}" alt="銀座やしろ エンブレム"></div>
+    <h1 class="fade d1">銀座やしろ</h1>
+    <p class="sub fade d2">GINZA — MINI CLUB SNACK</p>
+    <div class="fade d3">
+      <p class="notice">只今、準備中です</p>
+      <p class="open-date">2026.9.7<span class="dow">（月）OPEN 予定</span></p>
+    </div>
+    <p class="poem fade d4">
+      銀座8丁目、静かなビルの3階。<br>
+      小さなカウンターの灯りを、<br>
+      いま丁寧に、灯しはじめています。<br>
+      <span>—— オープンの日に、あなたの「ただいま」を。</span>
+    </p>
+    <div class="links fade d5">
+      <a class="btn" href="{{ shop.instagram_url }}" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn" href="{{ shop.line_url }}" target="_blank" rel="noopener">LINEでお問い合わせ</a>
+    </div>
+    <p class="addr fade d6">
+      <b>銀座やしろ</b><br>
+      〒104-0061 東京都中央区銀座8-7-21 三恵ビル3階
+    </p>
+  </div>
+</body>
+</html>

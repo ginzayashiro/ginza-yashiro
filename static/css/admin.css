@@ -1,0 +1,69 @@
+/* 銀座やしろ - 受注管理画面 */
+:root{
+  --bg:#101216;--card:#1a1d24;--line:rgba(201,163,91,.3);
+  --gold:#c9a35b;--gold-light:#e6c987;--text:#ece7dd;--dim:#a9a396;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+.admin-header{
+  position:sticky;top:0;z-index:10;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+  background:rgba(16,18,22,.95);backdrop-filter:blur(10px);
+  padding:16px 24px;border-bottom:1px solid var(--line);
+}
+.admin-header h1{font-size:1.15rem;letter-spacing:.08em;color:var(--gold-light)}
+.admin-status{display:flex;align-items:center;gap:10px;font-size:.85rem;color:var(--dim)}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.dot.online{background:#3ecf6f;box-shadow:0 0 8px #3ecf6f}
+.dot.offline{background:#e05a5a}
+.btn-small{
+  background:var(--card);border:1px solid var(--line);color:var(--text);
+  padding:6px 14px;border-radius:999px;cursor:pointer;font-size:.8rem;
+}
+.btn-small:hover{border-color:var(--gold)}
+.admin-main{max-width:960px;margin:0 auto;padding:24px}
+.admin-hint{color:var(--dim);font-size:.82rem;margin-bottom:20px}
+.order-list{display:flex;flex-direction:column;gap:18px}
+.order-card{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:14px;padding:22px;animation:slideIn .4s ease;
+}
+.order-card.new-flash{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,163,91,.25),0 10px 40px rgba(0,0,0,.5)}
+@keyframes slideIn{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+.order-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.order-id{font-size:.78rem;color:var(--dim)}
+.order-time{font-size:.78rem;color:var(--dim)}
+.badge{display:inline-block;padding:4px 14px;border-radius:999px;font-size:.75rem;font-weight:600}
+.badge.new{background:#8a6a20;color:#ffe9b0}
+.badge.preparing{background:#1d5a8a;color:#cfe8ff}
+.badge.opened{background:#7a3a8a;color:#f0d8ff}
+.badge.done{background:#2e7d4f;color:#d8ffe6}
+.badge.cancelled{background:#666;color:#ddd}
+.order-name{font-size:1.25rem;font-weight:700;margin-bottom:4px}
+.order-staff{color:var(--gold-light);font-size:.9rem;margin-bottom:10px}
+.order-timing{font-size:.88rem;margin-bottom:8px}
+.order-timing strong{color:var(--gold-light)}
+.order-payment{font-size:.88rem;margin-bottom:12px}
+.badge.pay-awaiting_link{background:#8a3a20;color:#ffd8c0}
+.badge.pay-link_sent{background:#1d5a8a;color:#cfe8ff}
+.badge.pay-paid{background:#2e7d4f;color:#d8ffe6}
+.badge.pay-cancelled{background:#666;color:#ddd}
+.order-items{margin:10px 0;padding:10px 14px;background:rgba(255,255,255,.03);border-radius:8px;font-size:.86rem}
+.order-items li{list-style:none;display:flex;justify-content:space-between;padding:4px 0}
+.order-total{text-align:right;font-size:1.15rem;color:var(--gold-light);font-weight:700;margin-top:6px}
+.order-message{
+  margin-top:10px;padding:12px 14px;border-left:3px solid var(--gold);
+  background:rgba(201,163,91,.07);border-radius:0 8px 8px 0;font-size:.88rem;white-space:pre-wrap;
+}
+.order-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.status-btn{
+  border:1px solid var(--line);background:transparent;color:var(--dim);
+  padding:7px 16px;border-radius:999px;cursor:pointer;font-size:.8rem;transition:.2s;
+}
+.status-btn:hover{color:var(--gold-light);border-color:var(--gold)}
+.status-btn.active{background:var(--gold);color:#161616;border-color:transparent;font-weight:600}
+.empty{color:var(--dim);text-align:center;padding:60px 0}
+@media(max-width:640px){
+  .admin-main{padding:16px}
+  .order-card{padding:16px}
+}

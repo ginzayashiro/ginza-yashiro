@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>受注管理 | 銀座やしろ</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+<body>
+<header class="admin-header">
+  <h1>🍾 銀座やしろ 受注管理</h1>
+  <div class="admin-status">
+    <span id="connStatus" class="dot offline"></span><span id="connLabel">接続中…</span>
+    <a href="{{ airpay_url }}" target="_blank" rel="noopener" class="btn-small">💳 エアペイ管理画面</a>
+    <button id="soundToggle" class="btn-small">🔔 通知音ON</button>
+  </div>
+</header>
+
+<main class="admin-main">
+  <p class="admin-hint">このページを開いたままにすると、新しい注文がリアルタイムで表示され、通知音が鳴ります。</p>
+  <div id="orderList" class="order-list"></div>
+</main>
+
+<audio id="notifySound" preload="auto">
+  <source src="{{ url_for('static', filename='snd/notify.mp3') }}" type="audio/mpeg">
+</audio>
+
+<script>
+const ADMIN_KEY = {{ key | tojson }};
+</script>
+<script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+</body>
+</html>

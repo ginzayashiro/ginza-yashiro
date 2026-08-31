@@ -1,0 +1,406 @@
+{% extends "base.html" %}
+{% block body_class %}page-home{% endblock %}
+{% block content %}
+
+<!-- ============ ヒーロー ============ -->
+<section class="hero">
+  <!-- 📷 写真枠 PH-01: 店内メイン写真
+       撮影シチュエーション: カウンター越しに店内全体。ボトルのバックバーと間接照明が映る角度。夜・営業前の整った状態で。横構図推奨 -->
+  <div class="hero-bg photo-slot" data-photo="hero-main" role="img" aria-label="店内の様子（写真準備中）"></div>
+  <!-- 撮影ガイド用ラベル（写真差し替えで非表示になる）。拡大アニメの影響を受けないよう hero 直下に配置 -->
+  <div class="photo-slot-label hero-photo-note">📷 PH-01 店内メイン写真<br><small>カウンター越しにバックバー全体／夜・横構図</small></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <img src="{{ url_for('static', filename='img/logo-emblem-white.png') }}" alt="銀座やしろ エンブレム" class="hero-logo">
+    <p class="hero-sub">GINZA &mdash; MINI CLUB SNACK</p>
+    <h1 class="hero-title">銀座やしろ</h1>
+    <p class="hero-desc"><span class="nb">銀座8丁目、</span><span class="nb">静かなビルの3階。</span><br><span class="nb">明るく穏やかな時間が流れる、</span><span class="nb">小さな隠れ家。</span></p>
+    <p class="hero-iyasaka"><span class="nb">今宵も、</span><span class="nb">あなたの「<ruby>弥栄<rt>いやさか</rt></ruby>」を。</span></p>
+    <div class="hero-actions">
+      <a href="#concept" class="btn btn-gold">お店について</a>
+      <a href="#first-visit" class="btn btn-ghost">初めての方へ</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><span></span>SCROLL</div>
+</section>
+
+<!-- ============ コンセプト ============ -->
+<section class="section" id="concept">
+  <div class="container">
+    <div class="section-head">
+      <p class="en">CONCEPT</p>
+      <h2><span class="nb">ちいさな店の、</span><span class="nb">あたたかな心づかい。</span></h2>
+      <p class="concept-lead"><span class="nb">いらっしゃいませ。</span><span class="nb">ようこそ、やしろへ。</span></p>
+    </div>
+    <div class="concept-grid">
+      <!-- 📷 写真枠 PH-08: 店の看板・内装（コンセプト用）
+           撮影シチュエーション: 「銀座やしろ」の看板か店内の美しい景観。夜の灯りで雰囲気重視。縦構図推奨 -->
+      <div class="photo-slot tall" data-photo="concept-shop" role="img" aria-label="店の看板・内装（写真準備中）">
+        <div class="photo-slot-label">📷 PH-08 店の看板 or 内装<br><small>看板または美しい店内景観／夜の灯りで・縦構図</small></div>
+      </div>
+      <div class="concept-text">
+        <p><span class="nb">銀座8丁目、</span><span class="nb">三恵ビルの3階。</span><br>
+        <span class="nb">ドアを開ければ、</span><span class="nb">時間がゆっくり流れる、</span><span class="nb">大人の空間。</span></p>
+        <p><span class="nb">オーナーママの佳織と、</span><span class="nb">愉快なスタッフが迎える</span><span class="nb">「やしろ」。</span><br>
+        <span class="nb">大型店の慌ただしさとは無縁の、</span><span class="nb">明るく穏やかなお店です。</span><br>
+        <span class="nb">ミニクラブの上質さと、</span><span class="nb">スナックの気さくさを、</span><span class="nb">あわせ持っています。</span></p>
+        <p><span class="nb">ママとスタッフの距離が近く、</span><span class="nb">初めての方も</span><span class="nb">すぐに打ち解けられます。</span><br>
+        <span class="nb">おひとり様も、</span><span class="nb">大切なご接待も、</span><span class="nb">どうぞお気軽に。</span></p>
+        <p><span class="nb">今夜も、</span><span class="nb">あなたの</span><span class="nb">「ただいま」を、</span><span class="nb">お待ちしております。</span></p>
+        <ul class="concept-points">
+          <li>カラオケ完備</li>
+          <li>おひとり様歓迎</li>
+          <li>ご接待・お祝いに</li>
+          <li>明るく穏やかな雰囲気</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ オーナーママ ============ -->
+<section class="section" id="mama">
+  <div class="container">
+    <div class="section-head">
+      <p class="en">OWNER MAMA</p>
+      <h2>オーナーママ 屋代佳織</h2>
+      <p class="mama-tagline">心がほどけて、背筋が伸びる場所。<br>迷って、遠回りして、今ここに。</p>
+    </div>
+    <div class="mama-grid">
+      <!-- 📷 写真: ママのオフィシャル写真（設定済み） -->
+      <div class="photo-slot mama-photo-small has-photo" data-photo="mama-portrait" role="img" aria-label="オーナーママ 屋代佳織" style="background-image:url('/static/img/mama-portrait.jpg');background-size:cover;background-position:center 35%;"></div>
+      <div class="mama-text">
+        <p class="mama-intro">1975年、茨城に生まれ、<br>
+        幼い頃から、身体で表現することを覚えました。<br>
+        クラシックバレエ、体操、空手、ジャズダンス。<br>
+        国体の代表候補に選ばれるほど、<br>
+        競技に打ち込んだ日々が、今の礎です。</p>
+
+        <p>一度は銀行員として、数字と向き合う日々。<br>
+        それでも「動くこと」への想いを捨てきれず、<br>
+        スポーツインストラクターの道へ転身。<br>
+        ダンサーとして、モデルとして、<br>
+        舞台の袖でも、光の中でも、<br>
+        人の輝く瞬間を支え続けてきました。</p>
+
+        <p>トレーナー時代、生徒さんたちに<br>
+        愛を込めて呼ばれたのが、<strong>「鬼軍曹Rico」</strong>。<br>
+        潔く、サバサバと、漢（おとこ）勝りに。<br>
+        ハッキリものを言う、その真っ直ぐさの奥に、<br>
+        誰よりも温かな愛があるからこそ、<br>
+        人はまた、会いに来るのです。</p>
+
+        <p>やがて BBP（Beauty Body Project）を立ち上げ、<br>
+        企業の健康を支える出張エクササイズや、<br>
+        ファスティングマイスターとしての食育指導まで。</p>
+
+        <p>そして2025年、50歳の節目に、<br>
+        銀座8丁目に小さなミニクラブ、<br>
+        「銀座やしろ」を開きました。</p>
+
+        <p>迷って、遠回りして、<br>
+        だからこそ、ここにいる意味がある。<br>
+        ママに面白スイッチが入った夜は、<br>
+        やしろは空前のエンタメ館に変わる。<br>
+        笑って、泣いて、歌って、乾杯して。</p>
+
+        <p class="mama-close">あなたの「ただいま」を、<br>
+        心からお待ちしています。</p>
+
+        <ul class="mama-badges">
+          <li>BBP 代表</li>
+          <li>鬼軍曹Rico</li>
+          <li>ファスティングマイスター</li>
+          <li>元銀行員・元ダンサー</li>
+        </ul>
+        <div class="mama-media">
+          <p class="mama-media-head">メディア出演</p>
+          <p class="mama-media-list">NHK「あなたが主役50ボイス」「Rの法則」「晴れときどきファーム」／ 日本テレビ「ママモコモてれび」／ テレビ朝日「中居正広のミになる図書館」／ フジテレビ「出川哲朗とバリバリウーマン」／ CM「アクエリアス」振付（森星さん担当）／ YA-MAN ショッピングチャンネル出演・広告モデル ／ ポカリスエット「1分間beauty project」監修 ／ 雑誌「東京カレンダー」「月間赤ちゃんとママ」／ YouTube「NO GOOD TV」（赤西仁・錦戸亮）出演 ほか多数</p>
+        </div>
+        <div class="mama-cta">
+          <p>店舗のご利用、企業出張健康講演・エクササイズ講演、<br class="sp-only">メディア出演のご依頼は、お気軽にどうぞ。</p>
+          <div class="fv-actions">
+            <a href="{{ shop.line_url }}" target="_blank" rel="noopener" class="btn btn-line">LINEで相談する</a>
+            <a href="mailto:{{ shop.email }}" class="btn btn-ghost">✉️ メールで相談する</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 料金システム ============ -->
+<section class="section section-dark" id="system">
+  <div class="container">
+    <div class="section-head">
+      <p class="en">SYSTEM</p>
+      <h2>料金システム</h2>
+      <p class="system-lead"><span class="nb">ボトル追加無しの場合</span> <strong><span class="nb">おひとり様 ¥22,000（税込）</span></strong><br>
+      <small><span class="nb">2名様以上より</span><span class="nb">セット＆サービスチャージが</span><span class="nb">お得になります</span></small></p>
+    </div>
+    <div class="system-table-wrap">
+      <table class="system-table">
+        <thead>
+          <tr><th>料金システム</th><th>カウンター席</th><th>ソファ席</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>基本料金セット 1名様</td><td>¥10,000</td><td>¥10,000</td></tr>
+          <tr><td>基本料金 2名様以上 1名様につき</td><td>¥7,000</td><td>¥7,000</td></tr>
+          <tr><td>テーブルチャージ 1名様につき</td><td>¥5,000</td><td>¥5,000</td></tr>
+          <tr><td>ソファ席ボックスチャージ 1組につき</td><td>&mdash;</td><td>¥5,000</td></tr>
+          <tr><td>延長料 90分以降30分毎</td><td>1名様につき ¥2,000</td><td>1組につき ¥5,000</td></tr>
+          <tr><td>サービスチャージ 〜22:59入店</td><td>1名様 30%</td><td>2名様以上 25%</td></tr>
+          <tr><td>サービスチャージ 23:00〜入店</td><td>1名様 35%</td><td>2名様以上 30%</td></tr>
+          <tr><td>その他オプション</td><td colspan="2">同伴等 別途</td></tr>
+        </tbody>
+      </table>
+      <div class="system-extra">
+        <p><span>キープボトル（ウイスキー各種・焼酎）</span><span>¥20,000〜</span></p>
+        <p><span>ショット</span><span>¥3,000</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 初回限定プラン ============ -->
+<section class="section first-visit" id="first-visit">
+  <div class="container">
+    <div class="first-visit-card">
+      <p class="fv-ribbon">一見様 初回限定プラン</p>
+      <h2 class="fv-title"><span class="nb">まずは、</span><span class="nb">お試しの60分を。</span></h2>
+      <p class="fv-lead"><span class="nb">「銀座のクラブって、</span><span class="nb">敷居が高そう…」</span><br>
+      <span class="nb">そんなあなたのための、</span><span class="nb">下見ご来店プランです。</span></p>
+      <div class="fv-body">
+        <div class="fv-detail">
+          <p class="fv-plan-name"><span class="nb">やしろのハウスボトルで</span><span class="nb">過ごす、60分間</span></p>
+          <p class="fv-desc"><span class="nb">ハウスボトルを片手に、</span><span class="nb">お店の雰囲気と</span><span class="nb">スタッフとの会話を、</span><span class="nb">ゆっくりと。</span><br>
+          <span class="nb">おひとり様でも、</span><span class="nb">お連れ様とご一緒でも。</span><br>
+          <span class="nb">まずは「やしろ」を、</span><span class="nb">知るところから。</span></p>
+          <ul class="fv-notes">
+            <li>下見ご来店の方限定</li>
+            <li>ご予約はLINEが確実です（24時間受付）</li>
+          </ul>
+          <div class="fv-actions">
+            <a href="{{ shop.line_url }}" target="_blank" rel="noopener" class="btn btn-line">LINEで予約する</a>
+          </div>
+          <p class="fv-tel-note">お電話 <a href="tel:{{ shop.tel | replace('-', '') }}">{{ shop.tel }}</a> は営業時間内のみつながります</p>
+        </div>
+        <div class="fv-price-box">
+          <p class="fv-price-label">おひとり様</p>
+          <p class="fv-price">¥15,000<span>（税込）</span></p>
+          <p class="fv-price-note">60分・ハウスボトル付き</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 遠隔オーダー（キャッチー案内） ============ -->
+<section class="section section-dark remote-catch" id="remote">
+  <div class="container">
+    <div class="section-head">
+      <p class="en">REMOTE ORDER</p>
+      <h2><span class="nb">離れていても、</span><span class="nb">繋がる<ruby>弥栄<rt>いやさか</rt></ruby>。</span></h2>
+      <p class="remote-lead"><span class="nb">銀座の小さなカウンターは、</span><span class="nb">あなたの手のひらの中に。</span></p>
+    </div>
+    <div class="iyasaka-note">
+      <p class="iyasaka-word"><ruby>弥栄<rt>いやさか</rt></ruby> とは</p>
+      <p class="iyasaka-text"><span class="nb">「弥（いよいよ）栄える」——</span><span class="nb">相手のこれからの繁栄を願う、</span><span class="nb">日本古来の祝いの言葉。</span><br>
+      <span class="nb">グラスを合わせるだけの</span><span class="nb">「乾杯」よりも、</span><span class="nb">もっと深く、</span><span class="nb">相手の未来を想う響きです。</span></p>
+      <p class="iyasaka-sign"><span class="nb">やしろでは、</span><span class="nb">あなたの大切な人への「弥栄」を</span><span class="nb">お届けします。</span></p>
+    </div>
+    <div class="order-intro-grid">
+      <div class="order-intro-text">
+        <p class="catch-line"><span class="nb">今夜は来られなくても、</span><span class="nb">あなたの想いは、</span><span class="nb">店に届きます。</span></p>
+        <p><span class="nb"><strong>大切なお取引先のお席</strong>に、</span><span class="nb">サプライズのシャンパンを。</span><br>
+        <span class="nb"><strong>愉快なママ＆スタッフへの応援</strong>にも、</span><span class="nb">ぜひ。</span></p>
+        <p><span class="nb">指名スタッフとメッセージ、</span><span class="nb">開栓のタイミングを、</span><span class="nb">選ぶだけ。</span><br>
+        <span class="nb">開栓の瞬間は</span><span class="nb"><strong>Instagramライブ</strong> で、</span><span class="nb">離れた場所から、</span><span class="nb">ご一緒いただけます。</span></p>
+        <a href="/order" class="btn btn-gold btn-big">🍾 遠隔オーダーへ進む</a>
+      </div>
+      <!-- 📷 写真枠 PH-02: 開栓シーン
+           撮影シチュエーション: スタッフがシャンパンを開栓する瞬間。手元アップ＋グラス。温かい照明で。縦構図推奨 -->
+      <div class="photo-slot tall" data-photo="opening-scene" role="img" aria-label="開栓シーン（写真準備中）">
+        <div class="photo-slot-label">📷 PH-02 開栓シーン<br><small>スタッフがシャンパンを開ける手元／温かい照明・縦構図</small></div>
+      </div>
+    </div>
+
+    <!-- 遠隔オーダーのメリット -->
+    <div class="benefit-grid">
+      <div class="benefit-card">
+        <p class="benefit-icon">💝</p>
+        <h3><span class="nb">会えない夜に、</span><span class="nb">想いが届く</span></h3>
+        <p><span class="nb">接待・お祝い・激励に。</span><span class="nb">あなたの名前で届くシャンパンが、</span><span class="nb">席を一気に華やかに。</span><span class="nb">会えないからこそ、</span><span class="nb">印象に残る贈り方です。</span></p>
+      </div>
+      <div class="benefit-card">
+        <p class="benefit-icon">⏰</p>
+        <h3><span class="nb">開栓タイミングは</span><span class="nb">自由自在</span></h3>
+        <p><span class="nb">「すぐに」も</span><span class="nb">「21時の弥栄に合わせて」も。</span><span class="nb">メッセージと指名を添えて、</span><span class="nb">最高の瞬間を演出できます。</span></p>
+      </div>
+      <div class="benefit-card">
+        <p class="benefit-icon">📸</p>
+        <h3><span class="nb">その瞬間を、</span><span class="nb">ライブで共有</span></h3>
+        <p><span class="nb">開栓シーンは</span><span class="nb">Instagramライブで配信。</span><span class="nb">離れていても、</span><span class="nb">コルクの抜ける音と笑顔を、</span><span class="nb">その場で。</span></p>
+      </div>
+      <div class="benefit-card">
+        <p class="benefit-icon">📱</p>
+        <h3><span class="nb">スマホで数分、</span><span class="nb">完結</span></h3>
+        <p><span class="nb">メニューを選んで</span><span class="nb">決済リンクでお支払い。</span><span class="nb">来店も電話も不要。</span><span class="nb">移動中や深夜でも、</span><span class="nb">思い立ったらすぐに。</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 詳しく知りたい方へ：店内ギャラリー ============ -->
+<section class="section" id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <p class="en">GALLERY</p>
+      <h2>店内の雰囲気</h2>
+    </div>
+    <div class="gallery-grid">
+      <!-- 📷 PH-04: カウンター席。座った目線でバックバーを正面に。横構図 -->
+      <div class="photo-slot" data-photo="counter" role="img" aria-label="カウンター（写真準備中）">
+        <div class="photo-slot-label">📷 PH-04 カウンター席<br><small>座った目線でバックバー正面／横構図</small></div>
+      </div>
+      <!-- 📷 PH-05: ボックス席・テーブル。グラスと照明を入れて雰囲気重視。横構図 -->
+      <div class="photo-slot" data-photo="table" role="img" aria-label="テーブル席（写真準備中）">
+        <div class="photo-slot-label">📷 PH-05 ボックス席<br><small>グラスと間接照明を入れて／横構図</small></div>
+      </div>
+      <!-- 📷 PH-06: バックバーのボトル棚アップ。キープボトルやシャンパンが並ぶ様子。縦構図 -->
+      <div class="photo-slot" data-photo="bottles" role="img" aria-label="ボトル棚（写真準備中）">
+        <div class="photo-slot-label">📷 PH-06 ボトル棚アップ<br><small>キープボトルとシャンパン／縦構図</small></div>
+      </div>
+      <!-- 📷 PH-07: 店の入口・ドア。「銀座やしろ」の看板や表札があれば一緒に。縦構図 -->
+      <div class="photo-slot" data-photo="entrance" role="img" aria-label="入口（写真準備中）">
+        <div class="photo-slot-label">📷 PH-07 入口・看板<br><small>ドアと店名看板／夜の灯りで・縦構図</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ボトルメニュー（ダイジェスト） ============ -->
+<section class="section section-dark" id="menu">
+  <div class="container">
+    <div class="section-head">
+      <p class="en">BOTTLE MENU</p>
+      <h2>ボトルメニュー</h2>
+      <p class="section-note"><span class="nb">シャンパン・ワイン・ウイスキーなど、</span><span class="nb">常時約50種類を</span><span class="nb">ご用意しています。</span></p>
+    </div>
+    <div class="digest-grid">
+      <div class="digest-box">
+        <h3>🍾 シャンパン</h3>
+        <p class="digest-range">¥28,000 〜 ¥200,000</p>
+        <p class="digest-items">ペリエ ジュエ／ローランペリエ／ドン ペリニヨン／クリュッグ／クリスタル ほか</p>
+      </div>
+      <div class="digest-box">
+        <h3>🍷 ワイン</h3>
+        <p class="digest-range">¥20,000 〜 ¥300,000</p>
+        <p class="digest-items">オーパスワン／ルーチェ／ルイ ラトゥール／ロバートモンダヴィ ほか</p>
+      </div>
+      <div class="digest-box">
+        <h3>🥃 ウイスキー・ブランデー</h3>
+        <p class="digest-range">¥20,000 〜 ¥80,000</p>
+        <p class="digest-items">山崎／白州／響／マッカラン／ヘネシー ほか</p>
+      </div>
+      <div class="digest-box">
+        <h3>🍶 焼酎</h3>
+        <p class="digest-range">¥20,000 〜</p>
+        <p class="digest-items">黒霧島／だいやめ</p>
+      </div>
+    </div>
+    <div class="center" style="margin-top:36px;">
+      <a href="/order" class="btn btn-ghost">全メニューは遠隔オーダーページでご覧いただけます</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ スタッフ ============ -->
+<section class="section" id="staff">
+  <div class="container">
+    <div class="section-head">
+      <p class="en">STAFF</p>
+      <h2>スタッフ紹介</h2>
+    </div>
+    <div class="staff-grid">
+      {% for s in menu["staff"] %}
+      {% if s != "指名なし" %}
+      <div class="staff-card">
+        <!-- 📷 写真枠: スタッフ「{{ s }}」のポートレート
+             撮影シチュエーション: カウンター内、正面を向いて柔らかい笑顔。バストアップ・縦構図 -->
+        <div class="photo-slot staff-photo" data-photo="staff-{{ loop.index }}" role="img" aria-label="{{ s }}の写真（写真準備中）">
+          <div class="photo-slot-label">📷 {{ s }}<br><small>バストアップ・柔らかい笑顔・縦構図</small></div>
+        </div>
+        <p class="staff-name">{{ s }}</p>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+    <p class="section-note center">※ スタッフ名・写真は仮です。実データをいただき次第、差し替えます。</p>
+  </div>
+</section>
+
+<!-- ============ ライブ配信（Instagram） ============ -->
+<section class="section section-dark" id="live">
+  <div class="container">
+    <div class="section-head">
+      <p class="en">LIVE STREAMING</p>
+      <h2>Instagramライブ配信</h2>
+    </div>
+    <div class="live-box">
+      <div class="live-icon">📸</div>
+      <div class="live-text">
+        <h3><span class="nb">開栓シーンを、</span><span class="nb">ライブでお届け</span></h3>
+        <p><span class="nb">遠隔オーダーをいただいた</span><span class="nb">シャンパンの開栓の様子は、</span><span class="nb"><strong>Instagramライブ</strong>で</span><span class="nb">配信いたします。</span><br>
+        <span class="nb">配信のご案内は、</span><span class="nb">ご注文後にメールまたはLINEで</span><span class="nb">お知らせします。</span></p>
+        <p><span class="nb">お店のInstagramアカウントを</span><span class="nb">フォローして</span><span class="nb">お待ちください。</span></p>
+        <div class="live-actions">
+          {% if shop.instagram_url %}
+          <a href="{{ shop.instagram_url }}" target="_blank" rel="noopener" class="btn btn-insta">Instagramをフォロー</a>
+          {% endif %}
+          <a href="{{ shop.line_url }}" target="_blank" rel="noopener" class="btn btn-line">LINEで通知を受け取る</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ アクセス ============ -->
+<section class="section" id="access">
+  <div class="container">
+    <div class="section-head">
+      <p class="en">ACCESS</p>
+      <h2>アクセス</h2>
+    </div>
+    <div class="access-grid">
+      <div class="access-info">
+        <h3>銀座やしろ</h3>
+        <table class="access-table">
+          <tr><th>住所</th><td>〒{{ shop.zip }}<br>{{ shop.address }}</td></tr>
+          <tr><th>電話</th><td><a href="tel:{{ shop.tel | replace('-', '') }}">{{ shop.tel }}</a><br><small class="tel-note">※ 営業時間内のみつながります</small></td></tr>
+          <tr><th>最寄り</th><td>【後日データ：例 銀座駅 A3出口 徒歩5分】</td></tr>
+          <tr><th>営業時間</th><td>【後日データ：例 20:00〜LAST】</td></tr>
+          <tr><th>定休日</th><td>【後日データ：例 日曜・祝日】</td></tr>
+        </table>
+        <div class="contact-box">
+          <p>ご予約・お問い合わせ</p>
+          <p class="contact-lead"><span class="nb">まずはLINEからどうぞ。</span><span class="nb">24時間いつでも、</span><span class="nb">確実にお受けします。</span></p>
+          <div class="contact-actions">
+            <a href="{{ shop.line_url }}" target="_blank" rel="noopener" class="btn btn-line">LINEで問い合わせ</a>
+            <a href="mailto:{{ shop.email }}" class="btn btn-ghost">✉️ メール</a>
+          </div>
+          <p class="tel-note-block">📞 お電話 <a href="tel:{{ shop.tel | replace('-', '') }}">{{ shop.tel }}</a><br>※ 営業時間内（夜間）のみつながります</p>
+        </div>
+      </div>
+      <div class="access-map">
+        <iframe
+          src="https://www.google.com/maps?q={{ shop.map_query | urlencode }}&output=embed"
+          width="100%" height="100%" style="border:0; min-height:360px;" allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" title="銀座やしろ 地図"></iframe>
+        <a href="{{ shop.maps_url }}" target="_blank" rel="noopener" class="btn btn-map">📍 Googleマップで開く・経路を調べる</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

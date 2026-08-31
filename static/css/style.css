@@ -1,0 +1,669 @@
+/* =====================================================
+   銀座やしろ 公式サイト スタイル
+   配色: 深夜のネイビーブラック × シャンパンゴールド
+   ===================================================== */
+:root{
+  --bg: #0e0f13;
+  --bg-soft: #16181f;
+  --bg-card: #1b1e27;
+  --gold: #c9a35b;
+  --gold-light: #e6c987;
+  --gold-dark: #9a7838;
+  --text: #ece7dd;
+  --text-dim: #a9a396;
+  --line: rgba(201,163,91,.25);
+  --radius: 14px;
+  --serif: 'Noto Serif JP', serif;
+  --sans: 'Noto Sans JP', sans-serif;
+  --latin: 'Cormorant Garamond', 'Noto Serif JP', serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.9;
+  letter-spacing:.03em;
+}
+img{max-width:100%;display:block}
+a{color:var(--gold);text-decoration:none}
+a:hover{color:var(--gold-light)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.5}
+.center{text-align:center}
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+.container.narrow{max-width:720px}
+
+/* ---------- ヘッダー ---------- */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(14,15,19,.75);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid transparent;
+  transition:.3s;
+}
+.site-header.scrolled{border-bottom-color:var(--line);background:rgba(14,15,19,.92)}
+.header-inner{
+  max-width:1200px;margin:0 auto;padding:14px 24px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-logo{height:42px;width:auto;display:block}
+.brand-mark{
+  font-family:var(--serif);font-size:.85rem;color:var(--gold);
+  border:1px solid var(--gold);padding:1px 7px;border-radius:3px;letter-spacing:.2em;
+}
+.brand-name{font-family:var(--serif);font-size:1.5rem;color:var(--text);letter-spacing:.15em}
+
+/* スマホのみで改行（改行バランス調整用） */
+.sp-only{display:none}
+@media (max-width:720px){ .sp-only{display:inline} }
+
+/* 文節ブロック（詩のような改行）：句読点で区切られた文節の途中では折り返さない */
+.nb{display:inline-block}
+/* 禁則処理：句読点・閉じカッコが行頭に来ないようにする。
+   文節ブロック(.nb)の内部では絶対に折り返さない。 */
+p, h1, h2, h3, td, li, .digest-items, .iyasaka-text{
+  line-break:strict;
+  word-break:keep-all;      /* 日本語の語中での切断を禁止 */
+}
+/* 文節ブロック内部の折り返しを完全禁止 */
+.nb{word-break:keep-all !important; overflow-wrap:normal !important}
+/* 長い文節が画面幅を超える場合の保険 */
+.nb{max-width:100%}
+/* PCのみで改行 */
+@media (max-width:720px){ .pc-only{display:none} }
+
+/* ---------- 弥栄（いやさか） ---------- */
+.hero-iyasaka{
+  margin:28px 0 36px;font-family:var(--serif);font-size:1.05rem;
+  color:var(--gold-light);letter-spacing:.14em;
+  text-shadow:0 2px 12px rgba(0,0,0,.7);
+}
+.hero-iyasaka ruby rt{font-size:.55em;color:var(--gold)}
+.iyasaka-note{
+  max-width:760px;margin:0 auto 48px;text-align:center;
+  background:rgba(201,163,91,.06);border:1px solid var(--line);
+  border-radius:var(--radius);padding:34px 36px;
+}
+.iyasaka-word{
+  font-family:var(--serif);font-size:1.5rem;color:var(--gold-light);
+  letter-spacing:.2em;margin-bottom:14px;
+}
+.iyasaka-word rt{font-size:.55em;color:var(--gold)}
+.iyasaka-text{font-size:.9rem;color:var(--text-dim);line-height:2.1;margin-bottom:14px}
+.iyasaka-sign{font-size:.88rem;color:var(--text);letter-spacing:.08em}
+.section-head h2 rt{font-size:.5em;color:var(--gold)}
+.remote-catch h2 rt{letter-spacing:0}
+.main-nav{display:flex;align-items:center;gap:26px}
+.main-nav a{color:var(--text-dim);font-size:.9rem;transition:.2s}
+.main-nav a:hover{color:var(--gold-light)}
+.nav-cta{
+  border:1px solid var(--gold);color:var(--gold)!important;
+  padding:8px 20px;border-radius:999px;font-weight:500;
+}
+.nav-cta:hover{background:var(--gold);color:#141414!important}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.nav-toggle span{display:block;width:24px;height:2px;background:var(--gold);margin:5px 0;transition:.3s}
+
+/* ---------- ヒーロー ---------- */
+.hero{position:relative;height:100svh;min-height:600px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.05);animation:heroZoom 18s ease-in-out infinite alternate;border:none;border-radius:0}
+/* ヒーローの仮写真枠: 背景全面に控えめに表示 */
+.hero-bg::before{opacity:.5}
+.hero-photo-note{
+  position:absolute;left:20px;bottom:20px;z-index:3;text-align:left;
+  opacity:.5;border:1px dashed rgba(201,163,91,.5);border-radius:12px;
+  background:rgba(14,15,19,.6);padding:10px 16px;font-size:.78rem;line-height:1.7;
+  pointer-events:none;
+}
+@media (max-width:720px){ .hero-photo-note{display:none} }
+@keyframes heroZoom{from{transform:scale(1.05)}to{transform:scale(1.12)}}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,15,19,.55),rgba(14,15,19,.35) 45%,rgba(14,15,19,.85))}
+.hero-content{position:relative;z-index:2;padding:0 24px}
+.hero-logo{height:120px;width:auto;margin:0 auto 28px;filter:drop-shadow(0 4px 24px rgba(0,0,0,.6))}
+.hero-sub{font-family:var(--latin);letter-spacing:.45em;color:var(--gold);font-size:clamp(.75rem,2vw,1rem);margin-bottom:18px}
+.hero-title{font-size:clamp(2.2rem,11vw,5.2rem);letter-spacing:.22em;margin-bottom:22px;text-shadow:0 4px 30px rgba(0,0,0,.6);white-space:nowrap}
+.hero-desc{font-size:clamp(.95rem,2.4vw,1.15rem);color:var(--text);margin-bottom:36px;text-shadow:0 2px 12px rgba(0,0,0,.7)}
+.hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+.hero-scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);color:var(--text-dim);font-size:.7rem;letter-spacing:.3em;z-index:2}
+.hero-scroll span{display:block;width:1px;height:44px;background:linear-gradient(var(--gold),transparent);margin:0 auto 8px;animation:scrollLine 1.8s ease-in-out infinite}
+@keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ---------- ボタン ---------- */
+.btn{
+  display:inline-block;padding:14px 34px;border-radius:999px;
+  font-weight:600;font-size:.95rem;letter-spacing:.08em;
+  cursor:pointer;border:none;transition:.25s;font-family:var(--sans);
+}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#161616;box-shadow:0 6px 24px rgba(201,163,91,.35)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(201,163,91,.5);color:#000}
+.btn-ghost{border:1px solid var(--gold);color:var(--gold);background:transparent}
+.btn-ghost:hover{background:rgba(201,163,91,.12);color:var(--gold-light)}
+.btn-line{background:#06c755;color:#fff}
+.btn-line:hover{background:#05a648;transform:translateY(-2px)}
+.btn-insta{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff}
+.btn-insta:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.btn-add{padding:9px 18px;font-size:.85rem;background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#161616;border-radius:999px;border:none;cursor:pointer;transition:.2s;font-weight:600}
+.btn-add:hover{transform:translateY(-2px)}
+.btn-add.added{background:#2e7d4f;color:#fff}
+
+/* ---------- セクション共通 ---------- */
+.section{padding:96px 0}
+.section-dark{background:var(--bg-soft)}
+.section-head{text-align:center;margin-bottom:56px}
+.section-head .en{font-family:var(--latin);color:var(--gold);letter-spacing:.4em;font-size:.8rem;margin-bottom:12px}
+.concept-lead{margin-top:16px;font-family:var(--serif);color:var(--gold-light);font-size:1.05rem;letter-spacing:.12em}
+.section-head h2{font-size:clamp(1.6rem,4vw,2.2rem);letter-spacing:.12em}
+.section-note{color:var(--text-dim);font-size:.82rem;margin-top:16px}
+.section-note.center{text-align:center}
+
+/* ---------- 写真枠（仮スロット） ---------- */
+.photo-slot{
+  position:relative;background:var(--bg-card);
+  border:2px dashed rgba(201,163,91,.45);
+  border-radius:var(--radius);
+  min-height:280px;display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.photo-slot.tall{min-height:480px}
+.hero-bg.photo-slot{min-height:0;position:absolute}
+.photo-slot::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(201,163,91,.10), transparent 60%),
+    repeating-linear-gradient(45deg, transparent 0 22px, rgba(201,163,91,.03) 22px 23px);
+}
+.photo-slot-label{
+  position:relative;text-align:center;color:var(--gold);
+  font-size:.95rem;letter-spacing:.1em;line-height:2;padding:20px;
+}
+.photo-slot-label small{color:var(--text-dim);font-size:.72rem;letter-spacing:.03em}
+/* 実写真を入れたら: .photo-slot に background-image を設定し has-photo クラスを付与 → 枠線とラベル非表示 */
+.photo-slot.has-photo{border:none}
+.photo-slot.has-photo .photo-slot-label{display:none}
+
+/* ---------- 遠隔オーダー案内 ---------- */
+.order-intro-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:center}
+.order-intro-text p{margin-bottom:20px;color:var(--text)}
+.order-intro-text strong{color:var(--gold-light)}
+.flow-list{list-style:none;margin:26px 0 34px}
+.flow-list li{
+  display:flex;align-items:center;gap:14px;
+  padding:12px 0;border-bottom:1px solid var(--line);font-size:.95rem;
+}
+.flow-list li span{
+  flex:0 0 30px;height:30px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+  color:#161616;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:.85rem;
+}
+
+/* ---------- コンセプト ---------- */
+.concept-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:center}
+.concept-text p{margin-bottom:20px}
+.concept-points{list-style:none;display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+.concept-points li{
+  border:1px solid var(--line);color:var(--gold-light);
+  padding:6px 16px;border-radius:999px;font-size:.82rem;
+}
+
+/* ---------- ギャラリー ---------- */
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.gallery-grid .photo-slot{min-height:240px}
+
+/* ---------- オーナーママ ---------- */
+.mama-tagline{
+  margin-top:16px;font-family:var(--serif);color:var(--gold-light);
+  font-size:1.05rem;letter-spacing:.1em;line-height:2.1;
+}
+.mama-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:52px;align-items:start}
+.mama-text p{margin-bottom:18px;font-size:.95rem}
+.mama-badges{list-style:none;display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+.mama-badges li{
+  border:1px solid var(--line);color:var(--gold-light);
+  padding:6px 16px;border-radius:999px;font-size:.78rem;letter-spacing:.05em;
+}
+/* オーナーママ欄の写真は控えめサイズ（店内景観が主役のため） */
+.mama-photo-small{min-height:0;height:auto;aspect-ratio:3/2;}
+@media (max-width:720px){ .mama-photo-small{aspect-ratio:3/2;} }
+.mama-media{
+  margin:0 0 26px;padding:22px 24px;
+  background:var(--bg-card);border:1px solid var(--line);border-radius:12px;
+}
+.mama-media-head{color:var(--gold);font-size:.8rem;letter-spacing:.2em;margin-bottom:10px}
+.mama-media-list{font-size:.8rem;color:var(--text-dim);line-height:2}
+.mama-cta{margin-top:26px}
+.mama-cta>p{font-size:.92rem;color:var(--text);margin-bottom:16px}
+
+/* ---------- 料金システム ---------- */
+.system-lead{margin-top:20px;font-size:1.05rem}
+.system-lead strong{color:var(--gold-light);font-size:1.35rem;font-family:var(--serif);letter-spacing:.05em}
+.system-lead small{color:var(--text-dim);font-size:.85rem}
+.system-table-wrap{max-width:860px;margin:0 auto}
+.system-table{
+  width:100%;border-collapse:collapse;
+  background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;font-size:.92rem;
+}
+.system-table th{
+  background:rgba(201,163,91,.14);color:var(--gold-light);
+  padding:14px 18px;text-align:left;font-weight:600;letter-spacing:.08em;font-size:.85rem;
+}
+.system-table td{
+  padding:13px 18px;border-top:1px solid rgba(201,163,91,.12);
+  color:var(--text);text-align:left;
+}
+.system-table tbody tr:nth-child(odd){background:rgba(255,255,255,.018)}
+.system-table td:first-child{color:var(--text-dim)}
+.system-extra{
+  margin-top:18px;display:flex;gap:18px;flex-wrap:wrap;justify-content:center;
+}
+.system-extra p{
+  display:flex;gap:18px;align-items:baseline;
+  border:1px solid var(--line);border-radius:999px;
+  padding:10px 24px;font-size:.9rem;background:var(--bg-card);
+}
+.system-extra p span:last-child{color:var(--gold-light);font-family:var(--serif);font-size:1.05rem}
+
+/* ---------- 初回限定プラン ---------- */
+.first-visit{
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(201,163,91,.14), transparent 60%),
+    var(--bg);
+}
+.first-visit-card{
+  position:relative;max-width:920px;margin:0 auto;
+  background:var(--bg-card);
+  border:1px solid var(--gold);border-radius:20px;
+  padding:64px 56px;text-align:center;
+  box-shadow:0 30px 80px rgba(0,0,0,.5), 0 0 0 6px rgba(201,163,91,.06);
+}
+.fv-ribbon{
+  display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+  color:#161616;font-weight:700;font-size:.85rem;letter-spacing:.15em;
+  padding:8px 28px;border-radius:999px;margin-bottom:26px;
+}
+.fv-title{font-size:clamp(1.7rem,4.5vw,2.4rem);letter-spacing:.12em;margin-bottom:20px}
+.fv-lead{color:var(--text-dim);margin-bottom:40px;font-size:.98rem}
+.fv-body{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;text-align:left}
+.fv-plan-name{font-family:var(--serif);font-size:1.2rem;color:var(--gold-light);margin-bottom:14px;letter-spacing:.06em}
+.fv-desc{font-size:.92rem;margin-bottom:18px;color:var(--text)}
+.fv-notes{list-style:none;margin-bottom:26px}
+.fv-notes li{
+  font-size:.82rem;color:var(--text-dim);padding:5px 0 5px 22px;position:relative;
+}
+.fv-notes li::before{content:"✦";position:absolute;left:0;color:var(--gold)}
+.fv-actions{display:flex;gap:12px;flex-wrap:wrap}
+.fv-tel-note{font-size:.78rem;color:var(--text-dim);margin-top:14px}
+.fv-tel-note a{color:var(--text-dim);text-decoration:underline dotted}
+.contact-lead{font-size:.92rem;color:var(--text);margin-bottom:16px}
+.tel-note{color:#8a8578;font-size:.75rem}
+.tel-note-block{font-size:.8rem;color:var(--text-dim);margin-top:16px;line-height:1.8}
+.tel-note-block a{color:var(--text-dim);text-decoration:underline dotted}
+.fv-price-box{
+  text-align:center;border:1px dashed rgba(201,163,91,.5);border-radius:16px;
+  padding:36px 24px;background:rgba(201,163,91,.05);
+}
+.fv-price-label{font-size:.85rem;color:var(--text-dim);letter-spacing:.2em;margin-bottom:8px}
+.fv-price{font-family:var(--serif);font-size:2.6rem;color:var(--gold-light);letter-spacing:.02em}
+.fv-price span{font-size:.9rem;color:var(--text-dim);margin-left:4px}
+.fv-price-note{font-size:.78rem;color:var(--text-dim);margin-top:8px}
+
+/* ---------- 遠隔オーダー キャッチー案内 ---------- */
+.remote-lead{margin-top:18px;color:var(--text-dim);font-size:.95rem;letter-spacing:.08em}
+.remote-catch .catch-line{
+  font-family:var(--serif);font-size:1.25rem;color:var(--gold-light);
+  letter-spacing:.06em;margin-bottom:18px;
+}
+.remote-catch .order-intro-text strong{color:var(--gold-light)}
+.btn-big{padding:18px 44px;font-size:1.05rem}
+
+/* 遠隔オーダーのメリット */
+.benefit-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:64px;
+}
+.benefit-card{
+  background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px 24px;text-align:center;transition:.25s;
+}
+.benefit-card:hover{transform:translateY(-4px);border-color:rgba(201,163,91,.55);box-shadow:0 14px 40px rgba(0,0,0,.35)}
+.benefit-icon{font-size:2rem;margin-bottom:14px}
+.benefit-card h3{font-size:1rem;color:var(--gold-light);letter-spacing:.06em;margin-bottom:12px}
+.benefit-card p{font-size:.82rem;color:var(--text-dim);line-height:1.85}
+
+/* ---------- ボトルメニュー ダイジェスト ---------- */
+.digest-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.digest-box{
+  background:var(--bg-card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:30px;transition:.25s;
+}
+.digest-box:hover{transform:translateY(-3px);border-color:rgba(201,163,91,.5)}
+.digest-box h3{font-size:1.1rem;color:var(--gold-light);margin-bottom:10px;letter-spacing:.08em}
+.digest-range{font-family:var(--serif);font-size:1.25rem;color:var(--text);margin-bottom:10px}
+.digest-items{font-size:.82rem;color:var(--text-dim)}
+
+/* ---------- スタッフ ---------- */
+.staff-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:28px}
+.staff-card{text-align:center}
+.staff-photo{min-height:260px;margin-bottom:14px}
+.staff-name{font-family:var(--serif);font-size:1.05rem;letter-spacing:.1em;color:var(--gold-light)}
+
+/* ---------- ライブ配信 ---------- */
+.live-box{
+  display:flex;gap:40px;align-items:center;
+  background:var(--bg-card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:48px;
+}
+.live-icon{font-size:4rem;flex-shrink:0}
+.live-text h3{font-size:1.35rem;margin-bottom:16px;color:var(--gold-light)}
+.live-text p{margin-bottom:14px;font-size:.95rem}
+.live-actions{display:flex;gap:14px;flex-wrap:wrap;margin:22px 0 10px}
+
+/* ---------- アクセス ---------- */
+.access-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:44px;align-items:stretch}
+.access-info h3{font-size:1.4rem;color:var(--gold-light);margin-bottom:20px;letter-spacing:.1em}
+.access-table{width:100%;border-collapse:collapse;margin-bottom:28px}
+.access-table th,.access-table td{padding:12px 4px;border-bottom:1px dashed var(--line);text-align:left;font-size:.93rem;vertical-align:top}
+.access-table th{color:var(--text-dim);font-weight:500;width:90px}
+.contact-box{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.contact-box>p{color:var(--gold);font-size:.85rem;letter-spacing:.15em;margin-bottom:14px}
+.contact-actions{display:flex;gap:12px;flex-wrap:wrap}
+.contact-actions .btn{padding:11px 20px;font-size:.85rem}
+.access-map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);min-height:380px}
+.access-map iframe{display:block}
+
+/* ---------- フッター ---------- */
+.site-footer{background:#0a0b0e;border-top:1px solid var(--line);padding:56px 24px 28px;margin-top:0}
+.footer-inner{max-width:1120px;margin:0 auto 36px;display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:36px}
+.footer-logo{height:64px;width:auto;margin-bottom:14px}
+.footer-name{font-family:var(--serif);font-size:1.4rem;letter-spacing:.2em;color:var(--gold-light)}
+.footer-sns{display:flex;gap:18px;margin-top:14px}
+.footer-sns a{
+  font-size:.8rem;color:var(--text-dim);letter-spacing:.08em;
+  border:1px solid var(--line);padding:5px 16px;border-radius:999px;transition:.2s;
+}
+.footer-sns a:hover{color:var(--gold-light);border-color:var(--gold)}
+.footer-tag{font-family:var(--latin);font-size:.72rem;letter-spacing:.3em;color:var(--text-dim);margin-top:6px}
+.footer-info p{font-size:.85rem;color:var(--text-dim);margin-bottom:6px}
+.footer-nav{display:flex;flex-direction:column;gap:8px;font-size:.85rem}
+.copyright{text-align:center;color:#5a564c;font-size:.75rem;letter-spacing:.1em}
+
+/* ---------- フローティングCTA ---------- */
+.floating-cta{
+  position:fixed;right:20px;bottom:20px;z-index:90;
+  display:flex;align-items:center;gap:8px;
+  background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+  color:#161616;font-weight:700;font-size:.88rem;
+  padding:14px 22px;border-radius:999px;
+  box-shadow:0 8px 28px rgba(201,163,91,.45);
+  transition:.25s;
+}
+.floating-cta:hover{transform:translateY(-3px);color:#000;box-shadow:0 12px 36px rgba(201,163,91,.6)}
+.fc-icon{font-size:1.1rem}
+
+/* =====================================================
+   遠隔オーダーページ
+   ===================================================== */
+.order-hero{padding:150px 0 56px;text-align:center;background:linear-gradient(180deg,var(--bg-soft),var(--bg))}
+.order-hero .en{font-family:var(--latin);color:var(--gold);letter-spacing:.4em;font-size:.8rem;margin-bottom:10px}
+.order-hero h1{font-size:clamp(1.8rem,5vw,2.6rem);letter-spacing:.15em;margin-bottom:16px}
+.order-hero-desc{color:var(--text-dim);font-size:.95rem}
+
+.order-layout{
+  display:grid;grid-template-columns:1fr 400px;gap:40px;
+  padding-top:56px;padding-bottom:110px;align-items:start;
+}
+
+/* カテゴリフィルタ */
+.category-filter{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.cat-btn{
+  background:var(--bg-card);border:1px solid var(--line);color:var(--text-dim);
+  padding:8px 20px;border-radius:999px;cursor:pointer;font-size:.85rem;transition:.2s;font-family:var(--sans);
+}
+.cat-btn:hover{color:var(--gold-light)}
+.cat-btn.active{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#161616;border-color:transparent;font-weight:600}
+
+/* メニューカード */
+.menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.menu-card{
+  background:var(--bg-card);border:1px solid var(--line);
+  border-radius:var(--radius);overflow:hidden;transition:.25s;
+  display:flex;flex-direction:column;
+}
+.menu-card:hover{transform:translateY(-4px);border-color:rgba(201,163,91,.55);box-shadow:0 14px 40px rgba(0,0,0,.4)}
+.menu-photo{min-height:190px;border:none;border-radius:0;border-bottom:1px solid var(--line)}
+.menu-body{padding:20px;display:flex;flex-direction:column;flex:1}
+.menu-cat{font-size:.7rem;color:var(--gold);letter-spacing:.25em;margin-bottom:6px}
+.menu-name{font-size:1.05rem;margin-bottom:8px;letter-spacing:.05em}
+.menu-desc{font-size:.82rem;color:var(--text-dim);margin-bottom:16px;flex:1}
+.menu-foot{display:flex;align-items:center;justify-content:space-between}
+.menu-price{font-family:var(--serif);font-size:1.2rem;color:var(--gold-light)}
+
+/* カート */
+.order-cart-area{position:sticky;top:90px}
+.cart-box{
+  background:var(--bg-card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:28px;
+}
+.cart-title{font-size:1.15rem;margin-bottom:18px;color:var(--gold-light);letter-spacing:.08em}
+.cart-items{margin-bottom:18px}
+.cart-empty{color:var(--text-dim);font-size:.85rem;text-align:center;padding:20px 0}
+.cart-item{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 0;border-bottom:1px dashed var(--line);font-size:.88rem;
+}
+.cart-item-name{flex:1}
+.cart-item-qty{display:flex;align-items:center;gap:6px}
+.qty-btn{
+  width:26px;height:26px;border-radius:50%;border:1px solid var(--gold);
+  background:transparent;color:var(--gold);cursor:pointer;font-size:.9rem;line-height:1;
+}
+.qty-btn:hover{background:var(--gold);color:#161616}
+.cart-item-price{color:var(--gold-light);min-width:70px;text-align:right;font-size:.85rem}
+.cart-total{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:16px 0;border-top:2px solid var(--gold);margin-bottom:24px;
+  font-size:1rem;
+}
+.cart-total strong{font-family:var(--serif);font-size:1.5rem;color:var(--gold-light)}
+
+/* 注文フォーム */
+.form-head{font-size:1rem;color:var(--gold);margin-bottom:16px;letter-spacing:.1em}
+.field{display:block;margin-bottom:18px}
+.field-label{display:block;font-size:.82rem;color:var(--text-dim);margin-bottom:7px}
+.field-label em{color:#e07070;font-style:normal;font-size:.72rem;margin-left:6px}
+.field input,.field select,.field textarea{
+  width:100%;background:var(--bg-soft);border:1px solid var(--line);
+  border-radius:8px;padding:12px 14px;color:var(--text);
+  font-size:.92rem;font-family:var(--sans);transition:.2s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,163,91,.15);
+}
+.field input[type="datetime-local"]{color-scheme:dark}
+.radio-row{display:flex;gap:20px;padding:6px 0}
+.radio-row label{display:flex;align-items:center;gap:8px;font-size:.9rem;cursor:pointer}
+.radio-row input{accent-color:var(--gold);width:auto}
+.payment-note{
+  background:rgba(201,163,91,.08);border:1px solid var(--line);
+  border-radius:10px;padding:16px;font-size:.8rem;color:var(--text-dim);margin-bottom:20px;
+}
+.payment-note strong{color:var(--gold-light)}
+.btn-submit{width:100%;padding:16px;font-size:1.05rem}
+.btn-submit:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.form-note{font-size:.72rem;color:var(--text-dim);text-align:center;margin-top:12px}
+
+/* トースト通知 */
+.toast{
+  position:fixed;bottom:100px;left:50%;transform:translateX(-50%) translateY(20px);
+  background:var(--gold);color:#161616;padding:12px 28px;border-radius:999px;
+  font-weight:600;font-size:.88rem;opacity:0;pointer-events:none;
+  transition:.3s;z-index:200;box-shadow:0 10px 30px rgba(0,0,0,.5);
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast.error{background:#c0504f;color:#fff}
+
+/* =====================================================
+   注文完了ページ
+   ===================================================== */
+.page-success{background:var(--bg)}
+.success-wrap{padding:160px 0 100px}
+.success-card{
+  background:var(--bg-card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:56px 48px;text-align:center;
+}
+.success-icon{font-size:3.5rem;margin-bottom:18px}
+.success-card h1{font-size:1.6rem;letter-spacing:.12em;margin-bottom:30px;color:var(--gold-light)}
+.success-table{max-width:420px;margin:0 auto 30px;border-collapse:collapse;width:100%;text-align:left}
+.success-table th,.success-table td{padding:11px 8px;border-bottom:1px dashed var(--line);font-size:.9rem}
+.success-table th{color:var(--text-dim);font-weight:500;width:38%}
+.next-step{text-align:left;max-width:480px;margin:0 auto 34px;background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:24px}
+.next-step h2{font-size:1rem;color:var(--gold);margin-bottom:12px;letter-spacing:.1em}
+.next-step ol{padding-left:20px;font-size:.88rem}
+.next-step li{margin-bottom:8px}
+.success-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* =====================================================
+   レスポンシブ
+   ===================================================== */
+@media (max-width:960px){
+  .order-intro-grid,.concept-grid,.mama-grid{grid-template-columns:1fr;gap:32px}
+  .access-grid{grid-template-columns:1fr}
+  .order-layout{grid-template-columns:1fr}
+  .order-cart-area{position:static}
+  .digest-grid{grid-template-columns:1fr}
+  .benefit-grid{grid-template-columns:repeat(2,1fr)}
+  .fv-body{grid-template-columns:1fr;gap:28px;text-align:center}
+  .fv-actions{justify-content:center}
+  .first-visit-card{padding:44px 26px}
+  .live-box{flex-direction:column;text-align:center;padding:36px 24px}
+  .live-actions{justify-content:center}
+  .footer-inner{grid-template-columns:1fr;gap:24px}
+  .system-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .system-table{min-width:0;font-size:.78rem}
+  .system-table th{padding:11px 10px;font-size:.72rem;letter-spacing:.04em}
+  .system-table td{padding:10px;font-size:.78rem;line-height:1.6}
+  .system-extra{flex-direction:column;align-items:stretch;gap:10px}
+  .system-extra p{justify-content:space-between;border-radius:10px}
+  .iyasaka-note{padding:26px 20px;margin-bottom:36px}
+}
+@media (max-width:720px){
+  .nav-toggle{display:block}
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-toggle.open span:nth-child(2){opacity:0}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .main-nav{
+    position:fixed;top:64px;right:0;left:0;
+    flex-direction:column;background:rgba(14,15,19,.98);
+    padding:24px;gap:20px;border-bottom:1px solid var(--line);
+    transform:translateY(-140%);transition:.3s;
+  }
+  .main-nav.open{transform:translateY(0)}
+  .section{padding:64px 0}
+  .menu-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr}
+  .benefit-grid{grid-template-columns:1fr;gap:16px;margin-top:44px}
+  .success-card{padding:40px 24px}
+  .floating-cta .fc-text{display:none}
+  .floating-cta{padding:16px}
+  .fc-icon{font-size:1.4rem}
+  /* ヒーローの写真枠ラベルはスマホでは非表示（SCROLL表示との重なりを防ぐ） */
+  .hero-bg .photo-slot-label{display:none}
+}
+
+/* スクロールフェードイン */
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.fade-in.visible{opacity:1;transform:none}
+
+/* ===== 工事中バナー ===== */
+.notice-bar{
+  position:sticky; top:0; z-index:900;
+  display:flex; align-items:center; justify-content:center; gap:.6em;
+  padding:.7em 1.2em;
+  background:linear-gradient(90deg,#2b1a1e,#3d2126,#2b1a1e);
+  border-bottom:1px solid rgba(212,175,55,.45);
+  color:#f5ead6; font-size:.86rem; line-height:1.6;
+  text-align:center; letter-spacing:.04em;
+}
+.notice-bar .notice-icon{font-size:1.1em;}
+.notice-bar .notice-text strong{color:#e8c96a; font-weight:700;}
+@media (max-width:640px){
+  .notice-bar{font-size:.78rem; padding:.6em .9em;}
+}
+
+/* ===== 求人ページ ===== */
+.recruit-hero{padding-top:140px}
+.recruit-lead{font-size:1.05rem;color:var(--gold,#c9a86a);letter-spacing:.08em;line-height:2;margin-top:10px}
+.recruit-intro{text-align:center;max-width:640px;margin:28px auto 0;line-height:2.4;letter-spacing:.06em;color:var(--text,#efe9df);font-size:.95rem}
+.recruit-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:920px;margin:0 auto 40px}
+.recruit-card{background:rgba(255,255,255,.04);border:1px solid rgba(201,168,106,.28);border-radius:14px;padding:28px 26px}
+.recruit-card h3{font-size:1.05rem;color:var(--gold-soft,#e3cfa4);letter-spacing:.1em;margin-bottom:16px;border-bottom:1px solid rgba(201,168,106,.25);padding-bottom:10px}
+.recruit-list{list-style:none;padding:0;margin:0}
+.recruit-list li{padding:8px 0 8px 1.4em;position:relative;line-height:1.9;font-size:.9rem;color:var(--text,#efe9df)}
+.recruit-list li::before{content:"◆";position:absolute;left:0;color:var(--gold,#c9a86a);font-size:.6em;top:1.1em}
+.recruit-terms{max-width:920px;margin:0 auto 44px}
+.recruit-terms h3{font-size:1.05rem;color:var(--gold-soft,#e3cfa4);letter-spacing:.1em;margin-bottom:16px;text-align:center}
+.recruit-table{width:100%;border-collapse:collapse;background:rgba(255,255,255,.03);border-radius:12px;overflow:hidden}
+.recruit-table th,.recruit-table td{padding:14px 18px;text-align:left;font-size:.88rem;line-height:1.9;border-bottom:1px solid rgba(255,255,255,.08);vertical-align:top}
+.recruit-table th{width:9em;color:var(--gold-soft,#e3cfa4);font-weight:600;letter-spacing:.08em;background:rgba(201,168,106,.08);white-space:nowrap}
+.recruit-cta{text-align:center;max-width:640px;margin:0 auto}
+.recruit-cta-text{line-height:2.2;letter-spacing:.08em;margin-bottom:24px;font-size:.95rem}
+.recruit-note{margin-top:18px;font-size:.78rem;color:var(--muted,#a89d8c);letter-spacing:.05em}
+@media (max-width:720px){
+  .recruit-grid{grid-template-columns:1fr;gap:18px}
+  .recruit-hero{padding-top:110px}
+  .recruit-table th,.recruit-table td{display:block;width:100%}
+  .recruit-table th{border-bottom:none;padding-bottom:2px}
+  .recruit-table td{padding-top:4px}
+}
+
+/* ===== 求人ページ：分かりやすさ調整 ===== */
+.recruit-card-note{color:var(--gold-soft,#e3cfa4);font-size:.85rem;margin:-8px 0 10px;letter-spacing:.06em}
+.recruit-heart{list-style:none;padding:0;margin:0 auto;max-width:560px;text-align:left}
+.recruit-heart li{padding:10px 0 10px 1.6em;position:relative;line-height:1.9;font-size:.92rem;border-bottom:1px dashed rgba(255,255,255,.1)}
+.recruit-heart li::before{content:"🌸";position:absolute;left:0;font-size:.8em;top:.9em}
+.recruit-mama-box{background:rgba(201,168,106,.08);border:1px solid rgba(201,168,106,.3);border-radius:14px;padding:26px;text-align:center;max-width:520px;margin:0 auto}
+.recruit-mama-name{font-size:1.2rem;color:var(--gold-soft,#e3cfa4);letter-spacing:.15em;font-weight:600}
+.recruit-mama-career{margin:10px 0 14px;font-size:.85rem;color:var(--muted,#a89d8c);letter-spacing:.06em}
+.recruit-mama-msg{line-height:2.1;font-size:.92rem}
+.recruit-addr{margin-top:26px;font-size:.82rem;color:var(--muted,#a89d8c);line-height:2;letter-spacing:.06em}
+.recruit-table td small{color:var(--muted,#a89d8c)}
+.recruit-table th small{display:block;color:var(--muted,#a89d8c);font-weight:400;margin-top:2px}
+
+/* ===== 求人ページ：ママ写真（カットなし・全体表示） ===== */
+.recruit-mama-photo{
+  width:180px; height:180px; margin:0 auto 16px;
+  border-radius:50%; overflow:hidden;
+  border:2px solid rgba(201,168,106,.5);
+  box-shadow:0 4px 20px rgba(0,0,0,.3);
+}
+.recruit-mama-photo img{
+  width:100%; height:100%; object-fit:contain;
+  background:#f0e6e0; display:block;
+}
+@media (max-width:720px){
+  .recruit-mama-photo{width:150px; height:150px;}
+}
+
+/* ===== 求人ページ：職種ごとの大きな枠 ===== */
+.recruit-role{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(201,168,106,.32);
+  border-radius:14px;
+  padding:26px 28px;
+  max-width:760px;
+  margin:0 auto 22px;
+}
+.recruit-role-title{
+  font-size:1.15rem; font-weight:600;
+  color:var(--gold-soft,#e3cfa4);
+  letter-spacing:.1em; margin-bottom:14px;
+  border-bottom:1px solid rgba(201,168,106,.3);
+  padding-bottom:10px;
+}
+.recruit-role-sub{color:var(--gold,#c9a86a); font-size:.88rem; margin:-6px 0 12px; letter-spacing:.06em}
+.recruit-role .recruit-list li strong{color:var(--gold-soft,#e3cfa4)}
+@media (max-width:720px){
+  .recruit-role{padding:20px 18px}
+  .recruit-role-title{font-size:1.05rem}
+}

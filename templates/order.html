@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% block title %}遠隔オーダー | 銀座やしろ{% endblock %}
+{% block body_class %}page-order{% endblock %}
+{% block content %}
+
+<section class="order-hero">
+  <div class="container">
+    <p class="en center">REMOTE ORDER</p>
+    <h1 class="center"><span class="nb">離れていても、</span><span class="nb">繋がる弥栄。</span></h1>
+    <p class="center order-hero-desc"><span class="nb">大切なお取引先のお席に。</span><br><span class="nb">愉快なママ＆スタッフへの応援に。</span><br><span class="nb">シャンパンを選び、</span><span class="nb">指名と開栓のタイミングを</span><span class="nb">添えるだけです。</span></p>
+  </div>
+</section>
+
+<div class="container order-layout">
+
+  <!-- ===== メニュー一覧 ===== -->
+  <div class="order-menu-area">
+    <div class="category-filter" id="categoryFilter">
+      <button class="cat-btn active" data-cat="all">すべて</button>
+    </div>
+    <div class="menu-grid" id="menuGrid">
+      {% for item in menu["items"] %}
+      <article class="menu-card" data-category="{{ item.category }}">
+        <!-- 📷 写真枠: メニュー「{{ item.name }}」
+             撮影シチュエーション: ボトル単体をカウンター上で。背景はバックバーをぼかして。横構図・正方形でも可 -->
+        <div class="photo-slot menu-photo" data-photo="menu-{{ item.id }}" role="img" aria-label="{{ item.name }}（写真準備中）">
+          <div class="photo-slot-label">📷 {{ item.name }}<br><small>ボトル単体、背景ぼかし／横構図</small></div>
+        </div>
+        <div class="menu-body">
+          <p class="menu-cat">{{ item.category }}</p>
+          <h3 class="menu-name">{{ item.name }}</h3>
+          <p class="menu-desc">{{ item.description }}</p>
+          <div class="menu-foot">
+            <p class="menu-price">¥{{ "{:,}".format(item.price) }}</p>
+            <button class="btn btn-add" data-id="{{ item.id }}" data-name="{{ item.name }}" data-price="{{ item.price }}">カートに追加</button>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    <p class="section-note">※ メニュー・価格・写真は仮データです。本データをいただき次第、差し替えます。</p>
+  </div>
+
+  <!-- ===== カート & 注文フォーム ===== -->
+  <aside class="order-cart-area" id="cartArea">
+    <div class="cart-box">
+      <h2 class="cart-title">🛒 ご注文内容</h2>
+      <div id="cartItems" class="cart-items">
+        <p class="cart-empty">カートは空です。メニューからお選びください。</p>
+      </div>
+      <div class="cart-total">
+        <span>合計</span>
+        <strong id="cartTotal">¥0</strong>
+      </div>
+
+      <form id="orderForm" class="order-form">
+        <h3 class="form-head">お客様情報・ご希望</h3>
+
+        <label class="field">
+          <span class="field-label">お名前（ニックネーム可）<em>*必須</em></span>
+          <input type="text" name="customer_name" required placeholder="例：山田 太郎">
+        </label>
+
+        <label class="field">
+          <span class="field-label">指名スタッフ</span>
+          <select name="staff">
+            {% for s in menu["staff"] %}
+            <option value="{{ s if s != '指名なし' else '' }}">{{ s }}</option>
+            {% endfor %}
+          </select>
+        </label>
+
+        <div class="field">
+          <span class="field-label">開栓タイミング</span>
+          <div class="radio-row">
+            <label><input type="radio" name="open_timing" value="now" checked> すぐに開栓</label>
+            <label><input type="radio" name="open_timing" value="scheduled"> 日時を指定</label>
+          </div>
+        </div>
+
+        <label class="field" id="openAtField" style="display:none;">
+          <span class="field-label">開栓希望日時</span>
+          <input type="datetime-local" name="open_at">
+        </label>
+
+        <label class="field">
+          <span class="field-label">スタッフへのメッセージ</span>
+          <textarea name="message" rows="4" placeholder="例：いつもありがとう！◯◯さん、開栓よろしく！🍾"></textarea>
+        </label>
+
+        <div class="payment-note">
+          <p><strong>💳 お支払いについて</strong></p>
+          <p>ご注文後、店舗より<strong>エアペイの決済リンク</strong>をメールまたはLINEでお送りします。リンク先でクレジットカード等によりお支払いください。ご入金の確認後、ご希望のタイミングで開栓いたします。</p>
+        </div>
+
+        <button type="submit" class="btn btn-gold btn-submit" id="submitBtn">注文を確定する</button>
+        <p class="form-note">※ 決済リンクの有効期限は発行から24時間です。</p>
+      </form>
+    </div>
+  </aside>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/order.js') }}"></script>
+{% endblock %}
