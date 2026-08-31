@@ -1,0 +1,29 @@
+ * Serving Flask app 'server'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://169.254.0.21:8000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [31/Aug/2026 12:21:45] "GET /?preview=1 HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 12:21:45] "GET /static/css/style.css?v=20 HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 12:21:45] "GET /static/css/photos.css?v=20 HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 12:21:45] "GET /static/img/logo-emblem-white.png HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 12:21:45] "GET /static/js/main.js HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 12:21:45] "GET /static/img/concept-shop.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 12:21:45] "GET /static/img/mama-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 12:21:45] "GET /static/img/table.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 12:21:45] "GET /static/img/box-front.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 12:21:45] "GET /static/img/bottles.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 12:21:45] "GET /static/img/entrance.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 12:21:51] "GET /?preview=1 HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 12:21:51] "GET /static/css/style.css?v=20 HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 12:21:51] "GET /static/css/photos.css?v=20 HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 12:21:51] "GET /static/img/logo-emblem-white.png HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 12:21:51] "GET /static/js/main.js HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 12:21:51] "GET /static/img/concept-shop.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 12:21:51] "GET /static/img/mama-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 12:21:51] "GET /static/img/table.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 12:21:51] "GET /static/img/box-front.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 12:21:51] "GET /static/img/bottles.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2026 12:21:51] "GET /static/img/entrance.jpg HTTP/1.1" 200 -
