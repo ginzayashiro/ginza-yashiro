@@ -24,13 +24,13 @@
       <span></span><span></span><span></span>
     </button>
     <nav class="main-nav" id="mainNav">
-      <a href="/#concept">コンセプト</a>
-      <a href="/#mama">オーナーママ</a>
-      <a href="/#system">料金システム</a>
+      <a href="/{% if request.args.get('preview') == '1' %}?preview=1{% endif %}#concept">コンセプト</a>
+      <a href="/{% if request.args.get('preview') == '1' %}?preview=1{% endif %}#mama">オーナーママ</a>
+      <a href="/{% if request.args.get('preview') == '1' %}?preview=1{% endif %}#system">料金システム</a>
       <a href="/#first-visit">初めての方へ</a>
-      <a href="/#menu">メニュー</a>
-      <a href="/#staff">スタッフ</a>
-      <a href="/#access">アクセス</a>
+      <a href="/{% if request.args.get('preview') == '1' %}?preview=1{% endif %}#menu">メニュー</a>
+      <a href="/{% if request.args.get('preview') == '1' %}?preview=1{% endif %}#staff">スタッフ</a>
+      <a href="/{% if request.args.get('preview') == '1' %}?preview=1{% endif %}#access">アクセス</a>
       <a href="/recruit">採用情報</a>
       <a href="/order{% if request.args.get('preview') == '1' %}?preview=1{% endif %}" class="nav-cta">遠隔オーダー</a>
     </nav>
@@ -67,9 +67,10 @@
       <p>TEL <a href="tel:{{ shop.tel | replace('-', '') }}">{{ shop.tel }}</a> <small>（営業時間内のみ）</small></p>
     </div>
     <div class="footer-nav">
-      <a href="/#concept">コンセプト</a>
+      <a href="/{% if request.args.get('preview') == '1' %}?preview=1{% endif %}#concept">コンセプト</a>
       <a href="/order{% if request.args.get('preview') == '1' %}?preview=1{% endif %}">遠隔オーダー</a>
-      <a href="/#access">アクセス</a>
+      <a href="/recruit{% if request.args.get('preview') == '1' %}?preview=1{% endif %}">採用情報</a>
+      <a href="/{% if request.args.get('preview') == '1' %}?preview=1{% endif %}#access">アクセス</a>
     </div>
   </div>
   <p class="copyright">&copy; 銀座やしろ All Rights Reserved.</p>
