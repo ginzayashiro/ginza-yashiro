@@ -209,7 +209,36 @@ p, h1, h2, h3, td, li, .digest-items, .iyasaka-text{
 
 /* ---------- ギャラリー ---------- */
 .gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.gallery-grid .photo-slot{min-height:240px}
+/* ギャラリー枠は写真の縦横比に合わせる（cover で上下を切らない） */
+.gallery-grid .photo-slot{
+  min-height:0;height:auto;
+  aspect-ratio:3/4;         /* 縦長写真用（PHOTO_GUIDE準拠） */
+  background-color:#1d1512;
+}
+@media(min-width:1024px){
+  .gallery-grid .photo-slot{ aspect-ratio:4/5; }
+}
+/* 装飾アップ写真（bottles/entrance）の周囲は黒、contain で全体を見せる */
+.gallery-grid .photo-slot[data-photo="bottles"],
+.gallery-grid .photo-slot[data-photo="entrance"]{
+  background-size:contain !important;
+  background-repeat:no-repeat !important;
+  background-position:center !important;
+  background-color:#1d1512;
+}
+/* 席全体写真は cover の中央付近で、座席が視野に入るよう position を微調整 */
+.gallery-grid .photo-slot[data-photo="table"]{
+  background-size:cover;
+  background-position:center 40%;
+}
+.gallery-grid .photo-slot[data-photo="box-front"]{
+  background-size:cover;
+  background-position:center 45%;
+}
+.gallery-grid .photo-slot[data-photo="counter"]{
+  background-size:cover;
+  background-position:center;
+}
 
 /* ---------- オーナーママ ---------- */
 .mama-tagline{
@@ -561,7 +590,8 @@ p, h1, h2, h3, td, li, .digest-items, .iyasaka-text{
   .main-nav.open{transform:translateY(0)}
   .section{padding:64px 0}
   .menu-grid{grid-template-columns:1fr}
-  .gallery-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr;gap:16px}
+  .gallery-grid .photo-slot{ aspect-ratio:4/5; }
   .benefit-grid{grid-template-columns:1fr;gap:16px;margin-top:44px}
   .success-card{padding:40px 24px}
   .floating-cta .fc-text{display:none}
