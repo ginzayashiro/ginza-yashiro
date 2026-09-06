@@ -67,7 +67,7 @@
     </div>
     <div class="mama-grid">
       <!-- 📷 写真: ママのオフィシャル写真（設定済み） -->
-      <div class="photo-slot mama-photo-small has-photo" data-photo="mama-portrait" role="img" aria-label="オーナーママ 屋代佳織" style="background-image:url('/static/img/mama-portrait.jpg');background-size:cover;background-position:center 35%;"></div>
+      <div class="photo-slot mama-photo-small has-photo" data-photo="mama-portrait" role="img" aria-label="オーナーママ 屋代佳織" style="background-image:url('/static/img/mama-portrait.jpg');background-size:contain;background-repeat:no-repeat;background-position:center;background-color:#f5f1ea;aspect-ratio:2/3;"></div>
       <div class="mama-text">
         <p class="mama-intro">1975年、茨城に生まれ、<br>
         幼い頃から、身体で表現することを覚えました。<br>
@@ -276,7 +276,7 @@
     </div>
     <div class="gallery-grid">
       <!-- カウンター席（バックバー正面・横構図） -->
-      <div class="photo-slot has-photo" data-photo="counter" role="img" aria-label="カウンター席" style="background-image:url('/static/img/counter.jpg');background-size:cover;background-position:center;"></div>
+      <div class="photo-slot has-photo" data-photo="counter" role="img" aria-label="カウンター席" style="background-image:url('/static/img/counter.jpg');background-size:contain;background-repeat:no-repeat;background-position:center;background-color:#14110c;"></div>
       <!-- 📷 PH-05: ボックス席・テーブル。グラスと照明を入れて雰囲気重視。横構図 -->
       <div class="photo-slot has-photo" data-photo="table" role="img" aria-label="奥ボックス席" style="background-image:url('/static/img/table.jpg');background-size:cover;background-position:center;"></div>
       <!-- 手前ボックス席 -->
@@ -333,20 +333,30 @@
       <h2>スタッフ紹介</h2>
     </div>
     <div class="staff-grid">
-      {% for s in menu["staff"] %}
-      {% if s != "指名なし" %}
       <div class="staff-card">
-        <!-- 📷 写真枠: スタッフ「{{ s }}」のポートレート
-             撮影シチュエーション: カウンター内、正面を向いて柔らかい笑顔。バストアップ・縦構図 -->
-        <div class="photo-slot staff-photo" data-photo="staff-{{ loop.index }}" role="img" aria-label="{{ s }}の写真（写真準備中）">
-          <div class="photo-slot-label">📷 {{ s }}<br><small>バストアップ・柔らかい笑顔・縦構図</small></div>
-        </div>
-        <p class="staff-name">{{ s }}</p>
+        <div class="photo-slot staff-photo has-photo" data-photo="staff-mama" role="img" aria-label="オーナーママ 屋代佳織" style="background-image:url('/static/img/mama-portrait.jpg');background-size:contain;background-repeat:no-repeat;background-position:center;background-color:#f5f1ea;"></div>
+        <p class="staff-name">オーナーママ 佳織</p>
       </div>
-      {% endif %}
-      {% endfor %}
+      <div class="staff-card">
+        <div class="photo-slot staff-photo" data-photo="staff-1" role="img" aria-label="スタッフ1（近日公開）">
+          <div class="photo-slot-label">スタッフ 1<br><small>近日公開</small></div>
+        </div>
+        <p class="staff-name">近日公開</p>
+      </div>
+      <div class="staff-card">
+        <div class="photo-slot staff-photo" data-photo="staff-2" role="img" aria-label="スタッフ2（近日公開）">
+          <div class="photo-slot-label">スタッフ 2<br><small>近日公開</small></div>
+        </div>
+        <p class="staff-name">近日公開</p>
+      </div>
+      <div class="staff-card">
+        <div class="photo-slot staff-photo" data-photo="staff-3" role="img" aria-label="スタッフ3（近日公開）">
+          <div class="photo-slot-label">スタッフ 3<br><small>近日公開</small></div>
+        </div>
+        <p class="staff-name">近日公開</p>
+      </div>
     </div>
-    <p class="section-note center">※ スタッフ名・写真は仮です。実データをいただき次第、差し替えます。</p>
+    <p class="section-note center">※ スタッフのご紹介は順次公開いたします。</p>
   </div>
 </section>
 
