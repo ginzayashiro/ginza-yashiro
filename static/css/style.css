@@ -813,3 +813,19 @@ p, h1, h2, h3, td, li, .digest-items, .iyasaka-text{
 .bottle-list .bname{ font-size:.95rem; }
 .bottle-list .bprice{ color:var(--gold-light,#e3cfa4); font-size:.9rem; white-space:nowrap; }
 .bottle-sub{ margin:28px 0 4px; text-align:center; color:var(--gold-light,#e3cfa4); font-size:.95rem; letter-spacing:.2em; text-decoration:underline; text-underline-offset:6px; }
+
+/* ===== モバイル横はみ出し防止（最終QA対応 2026-09-06） ===== */
+/* ヒーロー拡大アニメ等による横スクロールをモバイルで完全に遮断 */
+@media (max-width: 1000px){
+  html, body{ overflow-x: hidden; }
+}
+@media (max-width: 720px){
+  /* 長い日本語文（keep-allで改行不能になる）をモバイルでは自然に折り返す。
+     見出しの文節保持（.nb）はそのまま維持される */
+  .menu-desc, .menu-name, .menu-cat,
+  .bottle-list .bname, .bottle-list .bprice{
+    word-break: normal; overflow-wrap: anywhere;
+  }
+  .bottle-list li{ flex-wrap: wrap; }
+  .cat-btn{ white-space: normal; text-align: center; }
+}
