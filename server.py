@@ -38,7 +38,7 @@ SHOP = {
     "address": "東京都中央区銀座8-7-21 三恵ビル3階",
     "tel": "03-3289-5223",
     "email": os.environ.get("SHOP_EMAIL", "kaori.bbp@gmail.com"),
-    "line_url": os.environ.get("LINE_URL", "https://line.me/ti/p/QO8Afujo9H"),
+    "line_url": os.environ.get("LINE_URL", "https://line.me/R/ti/p/@910mckur"),
     "instagram_url": os.environ.get("INSTAGRAM_URL", "https://www.instagram.com/ginza.yashiro/"),
     "x_url": os.environ.get("X_URL", "https://x.com/ginza_yashiro"),
     "litlink_url": os.environ.get("LITLINK_URL", "https://lit.link/KaoriLinoLeoGinza"),

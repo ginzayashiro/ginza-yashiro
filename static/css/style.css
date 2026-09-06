@@ -53,7 +53,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.5}
   font-family:var(--serif);font-size:.85rem;color:var(--gold);
   border:1px solid var(--gold);padding:1px 7px;border-radius:3px;letter-spacing:.2em;
 }
-.brand-name{font-family:var(--serif);font-size:1.5rem;color:var(--text);letter-spacing:.15em}
+.brand-name{font-family:var(--serif);font-size:1.35rem;color:var(--text);letter-spacing:.15em;white-space:nowrap}
 
 /* スマホのみで改行（改行バランス調整用） */
 .sp-only{display:none}
@@ -95,12 +95,19 @@ p, h1, h2, h3, td, li, .digest-items, .iyasaka-text{
 .iyasaka-sign{font-size:.88rem;color:var(--text);letter-spacing:.08em}
 .section-head h1 rt,.section-head h2 rt{font-size:.5em;color:var(--gold)}
 .remote-catch h2 rt{letter-spacing:0}
-.main-nav{display:flex;align-items:center;gap:26px}
-.main-nav a{color:var(--text-dim);font-size:.9rem;transition:.2s}
+.main-nav{display:flex;align-items:center;gap:16px}
+.main-nav a{color:var(--text-dim);font-size:.82rem;transition:.2s;white-space:nowrap}
+@media (max-width:1280px){
+  .main-nav{gap:12px}
+  .main-nav a{font-size:.78rem}
+  .brand-name{font-size:1.2rem;letter-spacing:.1em}
+  .nav-cta{padding:7px 14px;font-size:.78rem}
+}
 .main-nav a:hover{color:var(--gold-light)}
 .nav-cta{
   border:1px solid var(--gold);color:var(--gold)!important;
   padding:8px 20px;border-radius:999px;font-weight:500;
+  white-space:nowrap;line-height:1.4;
 }
 .nav-cta:hover{background:var(--gold);color:#141414!important}
 .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
@@ -555,6 +562,16 @@ p, h1, h2, h3, td, li, .digest-items, .iyasaka-text{
 /* =====================================================
    レスポンシブ
    ===================================================== */
+@media (max-width:1080px){
+  .nav-toggle{display:block}
+  .main-nav{
+    position:fixed;top:64px;right:0;left:0;
+    flex-direction:column;background:rgba(14,15,19,.98);
+    padding:24px;gap:20px;border-bottom:1px solid var(--line);
+    transform:translateY(-140%);transition:.3s;
+  }
+  .main-nav.open{transform:translateY(0)}
+}
 @media (max-width:960px){
   .order-intro-grid,.concept-grid,.mama-grid{grid-template-columns:1fr;gap:32px}
   .access-grid{grid-template-columns:1fr}
@@ -577,17 +594,9 @@ p, h1, h2, h3, td, li, .digest-items, .iyasaka-text{
   .iyasaka-note{padding:26px 20px;margin-bottom:36px}
 }
 @media (max-width:720px){
-  .nav-toggle{display:block}
   .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
   .nav-toggle.open span:nth-child(2){opacity:0}
   .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-  .main-nav{
-    position:fixed;top:64px;right:0;left:0;
-    flex-direction:column;background:rgba(14,15,19,.98);
-    padding:24px;gap:20px;border-bottom:1px solid var(--line);
-    transform:translateY(-140%);transition:.3s;
-  }
-  .main-nav.open{transform:translateY(0)}
   .section{padding:64px 0}
   .menu-grid{grid-template-columns:1fr}
   .gallery-grid{grid-template-columns:1fr;gap:16px}
