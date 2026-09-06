@@ -4,11 +4,8 @@
 
 <!-- ============ ヒーロー ============ -->
 <section class="hero">
-  <!-- 📷 写真枠 PH-01: 店内メイン写真
-       撮影シチュエーション: カウンター越しに店内全体。ボトルのバックバーと間接照明が映る角度。夜・営業前の整った状態で。横構図推奨 -->
-  <div class="hero-bg photo-slot" data-photo="hero-main" role="img" aria-label="店内の様子（写真準備中）"></div>
-  <!-- 撮影ガイド用ラベル（写真差し替えで非表示になる）。拡大アニメの影響を受けないよう hero 直下に配置 -->
-  <div class="photo-slot-label hero-photo-note">📷 PH-01 店内メイン写真<br><small>カウンター越しにバックバー全体／夜・横構図</small></div>
+  <!-- ヒーロー: ボックス席全体（U字ソファー） -->
+  <div class="hero-bg photo-slot has-photo" data-photo="hero-main" role="img" aria-label="店内の様子（ボックス席全体）" style="background-image:url('/static/img/box-wide.jpg');background-size:cover;background-position:center 45%;"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <img src="{{ url_for('static', filename='img/logo-emblem-white.png') }}" alt="銀座やしろ エンブレム" class="hero-logo">
@@ -67,7 +64,7 @@
     </div>
     <div class="mama-grid">
       <!-- 📷 写真: ママのオフィシャル写真（設定済み） -->
-      <div class="photo-slot mama-photo-small has-photo" data-photo="mama-portrait" role="img" aria-label="オーナーママ 屋代佳織" style="background-image:url('/static/img/mama-portrait.jpg');background-size:contain;background-repeat:no-repeat;background-position:center;background-color:#f5f1ea;aspect-ratio:2/3;"></div>
+      <div class="photo-slot mama-photo-small has-photo" data-photo="mama-portrait" role="img" aria-label="オーナーママ 屋代佳織" style="background-image:url('/static/img/mama-portrait.jpg');background-size:cover;background-position:center 35%;"></div>
       <div class="mama-text">
         <p class="mama-intro">1975年、茨城に生まれ、<br>
         幼い頃から、身体で表現することを覚えました。<br>
@@ -334,7 +331,7 @@
     </div>
     <div class="staff-grid">
       <div class="staff-card">
-        <div class="photo-slot staff-photo has-photo" data-photo="staff-mama" role="img" aria-label="オーナーママ 屋代佳織" style="background-image:url('/static/img/mama-portrait.jpg');background-size:contain;background-repeat:no-repeat;background-position:center;background-color:#f5f1ea;"></div>
+        <div class="photo-slot staff-photo has-photo" data-photo="staff-mama" role="img" aria-label="オーナーママ 屋代佳織" style="background-image:url('/static/img/mama-staff.jpg');background-size:contain;background-repeat:no-repeat;background-position:center;background-color:#f5f1ea;"></div>
         <p class="staff-name">オーナーママ 佳織</p>
       </div>
       <div class="staff-card">
