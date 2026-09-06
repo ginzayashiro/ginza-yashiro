@@ -275,10 +275,8 @@
       <p class="seat-guide-note">メニュー以外のリクエストも、店頭にてお気軽にご相談ください。</p>
     </div>
     <div class="gallery-grid">
-      <!-- 📷 PH-04: カウンター席。座った目線でバックバーを正面に。横構図 -->
-      <div class="photo-slot" data-photo="counter" role="img" aria-label="カウンター（写真準備中）">
-        <div class="photo-slot-label">📷 PH-04 カウンター席<br><small>座った目線でバックバー正面／横構図</small></div>
-      </div>
+      <!-- カウンター席（バックバー正面・横構図） -->
+      <div class="photo-slot has-photo" data-photo="counter" role="img" aria-label="カウンター席" style="background-image:url('/static/img/counter.jpg');background-size:cover;background-position:center;"></div>
       <!-- 📷 PH-05: ボックス席・テーブル。グラスと照明を入れて雰囲気重視。横構図 -->
       <div class="photo-slot has-photo" data-photo="table" role="img" aria-label="奥ボックス席" style="background-image:url('/static/img/table.jpg');background-size:cover;background-position:center;"></div>
       <!-- 手前ボックス席 -->
@@ -322,7 +320,7 @@
       </div>
     </div>
     <div class="center" style="margin-top:36px;">
-      <a href="/order{% if request.args.get('preview') == '1' %}?preview=1{% endif %}" class="btn btn-ghost">全メニューは遠隔オーダーページでご覧いただけます</a>
+      <a href="/menu{% if request.args.get('preview') == '1' %}?preview=1{% endif %}" class="btn btn-ghost">全ボトルメニューはこちら</a>
     </div>
   </div>
 </section>
