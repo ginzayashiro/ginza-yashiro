@@ -223,6 +223,14 @@ def order_page():
     return render_template("order.html", shop=SHOP, menu=menu)
 
 
+@app.route("/menu")
+def menu_page():
+    if not is_open() and request.args.get("preview") != "1":
+        return render_template("maintenance.html", shop=SHOP)
+    menu = load_menu()
+    return render_template("menu.html", shop=SHOP, menu=menu)
+
+
 @app.route("/recruit")
 def recruit_page():
     if not is_open() and request.args.get("preview") != "1":

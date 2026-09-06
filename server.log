@@ -5,6 +5,27 @@
  * Running on http://127.0.0.1:8000
  * Running on http://169.254.0.21:8000
 [33mPress CTRL+C to quit[0m
-127.0.0.1 - - [31/Aug/2026 12:37:52] "GET /?preview=1 HTTP/1.1" 200 -
-127.0.0.1 - - [31/Aug/2026 12:37:52] "GET /?preview=1 HTTP/1.1" 200 -
-127.0.0.1 - - [31/Aug/2026 12:37:52] "GET /?preview=1 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Sep/2026 06:29:17] "GET /order?preview=1 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Sep/2026 06:29:17] "GET /static/js/main.js HTTP/1.1" 200 -
+127.0.0.1 - - [06/Sep/2026 06:29:17] "GET /static/img/logo-emblem-white.png HTTP/1.1" 200 -
+127.0.0.1 - - [06/Sep/2026 06:29:17] "GET /static/css/style.css?v=23 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Sep/2026 06:29:17] "GET /static/css/photos.css?v=23 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Sep/2026 06:29:17] "GET /static/js/order.js HTTP/1.1" 200 -
+127.0.0.1 - - [06/Sep/2026 06:29:17] "GET /static/img/menu/pj-brut.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [06/Sep/2026 06:29:17] "GET /static/img/menu/pj-bdb.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [06/Sep/2026 06:29:17] "GET /static/img/menu/lp-ultra.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [06/Sep/2026 06:29:17] "GET /static/img/menu/pj-belle.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [06/Sep/2026 06:29:17] "GET /static/img/menu/dom.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [06/Sep/2026 06:29:17] "GET /static/img/menu/armand-gold.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [06/Sep/2026 06:29:21] "GET /order?preview=1 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Sep/2026 06:29:21] "GET /static/css/style.css?v=23 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Sep/2026 06:29:21] "GET /static/css/photos.css?v=23 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Sep/2026 06:29:21] "GET /static/img/logo-emblem-white.png HTTP/1.1" 200 -
+127.0.0.1 - - [06/Sep/2026 06:29:21] "GET /static/js/main.js HTTP/1.1" 200 -
+127.0.0.1 - - [06/Sep/2026 06:29:21] "GET /static/js/order.js HTTP/1.1" 200 -
+127.0.0.1 - - [06/Sep/2026 06:29:21] "GET /static/img/menu/pj-brut.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [06/Sep/2026 06:29:21] "GET /static/img/menu/pj-bdb.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [06/Sep/2026 06:29:21] "GET /static/img/menu/lp-ultra.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [06/Sep/2026 06:29:21] "GET /static/img/menu/pj-belle.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [06/Sep/2026 06:29:21] "GET /static/img/menu/dom.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [06/Sep/2026 06:29:21] "GET /static/img/menu/armand-gold.jpg HTTP/1.1" 200 -

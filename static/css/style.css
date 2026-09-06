@@ -762,3 +762,54 @@ p, h1, h2, h3, td, li, .digest-items, .iyasaka-text{
   margin-top:12px;text-align:center;
   color:var(--text-dim,#a89c8c);font-size:.88rem;letter-spacing:.04em;
 }
+
+/* ===== お席のご案内 ===== */
+.seat-guide{
+  margin:18px auto 0; max-width:720px;
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--line,rgba(201,163,91,.35));
+  border-radius:14px; padding:20px 22px;
+}
+.seat-guide-title{
+  text-align:center; color:var(--gold-light,#e3cfa4);
+  font-size:.95rem; letter-spacing:.1em; margin-bottom:14px;
+}
+.seat-guide-list{
+  list-style:none; display:flex; gap:12px; flex-wrap:wrap; justify-content:center;
+}
+.seat-guide-list li{
+  border:1px solid var(--line,rgba(201,163,91,.35));
+  border-radius:999px; padding:10px 18px;
+  display:flex; flex-direction:column; align-items:center; gap:2px;
+}
+.seat-guide-list strong{ font-size:.95rem; color:var(--gold-light,#e3cfa4); }
+.seat-guide-list span{ font-size:.72rem; color:var(--text-dim,#a89c8c); letter-spacing:.05em; }
+.seat-guide-note{
+  margin-top:14px; text-align:center;
+  color:var(--text-dim,#a89c8c); font-size:.82rem; letter-spacing:.03em;
+}
+@media(max-width:720px){
+  .seat-guide-list{ gap:8px }
+  .seat-guide-list li{ padding:8px 14px }
+}
+
+/* ===== 遠隔オーダー：写真ありのメニューカード ===== */
+.menu-photo.has-photo{
+  width:100%; aspect-ratio:3/4;
+  background-size:contain; background-repeat:no-repeat; background-position:center;
+  background-color:#1a120c;
+  border:none; border-radius:var(--radius,14px) var(--radius,14px) 0 0;
+  min-height:0;
+}
+.menu-photo.has-photo::before{ display:none; }
+
+/* ===== ボトルメニューページ ===== */
+.bottle-cat{ margin:40px 0 8px; color:var(--gold-light,#e3cfa4); font-size:1.1rem; letter-spacing:.15em; border-bottom:1px solid var(--line,rgba(201,163,91,.35)); padding-bottom:10px; }
+.bottle-list{ list-style:none; }
+.bottle-list li{
+  display:flex; justify-content:space-between; align-items:baseline; gap:16px;
+  padding:12px 4px; border-bottom:1px dashed rgba(201,163,91,.2);
+}
+.bottle-list .bname{ font-size:.95rem; }
+.bottle-list .bprice{ color:var(--gold-light,#e3cfa4); font-size:.9rem; white-space:nowrap; }
+.bottle-sub{ margin:28px 0 4px; text-align:center; color:var(--gold-light,#e3cfa4); font-size:.95rem; letter-spacing:.2em; text-decoration:underline; text-underline-offset:6px; }

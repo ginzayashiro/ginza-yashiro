@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}ボトルメニュー | 銀座やしろ（銀座8丁目のスナック）{% endblock %}
+{% block description %}銀座やしろのボトルメニュー一覧。シャンパン・ワイン・ウイスキー・ブランデー・焼酎まで常時約50種類を明朗会計で。{% endblock %}
+{% block body_class %}page-menu{% endblock %}
+{% block content %}
+
+<section class="section" style="padding-top:120px">
+  <div class="container">
+    <div class="section-head">
+      <p class="en">BOTTLE MENU</p>
+      <h1 style="font-size:1.6rem">ボトルメニュー</h1>
+      <p class="section-note">すべて明朗会計・税込価格です。</p>
+    </div>
+
+    {% set cats = {
+      'シャンパン': None,
+      'ワイン（赤）': None, 'ワイン（白）': None,
+      'ウイスキー': None, 'ジャパニーズウイスキー': 'ジャパニーズウイスキー',
+      'ブランデー': None, '焼酎': None
+    } %}
+    {% set group_order = ['シャンパン','ワイン（赤）','ワイン（白）','ウイスキー','ジャパニーズウイスキー','ブランデー','焼酎'] %}
+    {% set sub_heads = {'ジャパニーズウイスキー':'ジャパニーズウイスキー'} %}
+
+    {% for cat in group_order %}
+      {% if cat in sub_heads %}
+        <p class="bottle-sub">{{ sub_heads[cat] }}</p>
+      {% else %}
+        <h2 class="bottle-cat">{{ cat }}</h2>
+      {% endif %}
+      <ul class="bottle-list">
+        {% for item in menu["bottle_menu"] if item.category == cat %}
+        <li>
+          <span class="bname">{{ item.name }}</span>
+          <span class="bprice">¥{{ "{:,}".format(item.price) }}</span>
+        </li>
+        {% endfor %}
+        {% if cat == 'シャンパン' %}
+          {% for item in menu["items"] if item.category == 'シャンパン' %}
+          <li>
+            <span class="bname">{{ item.name }}</span>
+            <span class="bprice">¥{{ "{:,}".format(item.price) }}</span>
+          </li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+    {% endfor %}
+
+    <p class="bottle-sub">ショット</p>
+    <ul class="bottle-list">
+      <li><span class="bname">各種ショット</span><span class="bprice">ALL ¥3,000</span></li>
+    </ul>
+
+    <p class="section-note" style="margin-top:36px">※ 在庫状況によりご用意できない場合がございます。メニュー以外のリクエストも店頭にてお気軽にご相談ください。</p>
+    <p class="section-note" style="text-align:center;margin-top:20px">
+      <a href="/order" class="link-gold">🍾 遠隔オーダー（シャンパンを贈る）はこちら</a>
+    </p>
+  </div>
+</section>
+
+{% endblock %}

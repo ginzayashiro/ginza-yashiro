@@ -22,11 +22,15 @@
     <div class="menu-grid" id="menuGrid">
       {% for item in menu["items"] %}
       <article class="menu-card" data-category="{{ item.category }}">
-        <!-- 📷 写真枠: メニュー「{{ item.name }}」
-             撮影シチュエーション: ボトル単体をカウンター上で。背景はバックバーをぼかして。横構図・正方形でも可 -->
-        <div class="photo-slot menu-photo" data-photo="menu-{{ item.id }}" role="img" aria-label="{{ item.name }}（写真準備中）">
-          <div class="photo-slot-label">📷 {{ item.name }}<br><small>ボトル単体、背景ぼかし／横構図</small></div>
+        {% if item.get('has_photo') and item.get('photo') %}
+        <!-- 写真あり -->
+        <div class="menu-photo has-photo" role="img" aria-label="{{ item.name }}" style="background-image:url('/static/{{ item.photo }}');"></div>
+        {% else %}
+        <!-- 写真待ち -->
+        <div class="photo-slot menu-photo" data-photo="menu-{{ item.id }}" role="img" aria-label="{{ item.name }}（写真待ち）">
+          <div class="photo-slot-label">📷 {{ item.name }}<br><small>写真待ち</small></div>
         </div>
+        {% endif %}
         <div class="menu-body">
           <p class="menu-cat">{{ item.category }}</p>
           <h3 class="menu-name">{{ item.name }}</h3>
@@ -39,7 +43,7 @@
       </article>
       {% endfor %}
     </div>
-    <p class="section-note">※ メニュー・価格・写真は仮データです。本データをいただき次第、差し替えます。</p>
+    <p class="section-note">※ 写真のある商品は在庫ありです。その他のボトルは <a href="/menu?preview=1" class="link-gold">ボトルメニュー</a> をご覧ください。</p>
   </div>
 
   <!-- ===== カート & 注文フォーム ===== -->
