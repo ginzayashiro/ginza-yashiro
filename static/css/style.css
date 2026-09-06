@@ -829,3 +829,16 @@ p, h1, h2, h3, td, li, .digest-items, .iyasaka-text{
   .bottle-list li{ flex-wrap: wrap; }
   .cat-btn{ white-space: normal; text-align: center; }
 }
+
+/* ===== モバイル横はみ出し防止 追加修正（グリッド子要素のmin-width問題） ===== */
+@media (max-width: 720px){
+  /* グリッドの1frが中身に引っ張られないよう強制的に0基点に */
+  .order-layout{ grid-template-columns: minmax(0, 1fr); }
+  .menu-grid{ grid-template-columns: minmax(0, 1fr); }
+  .order-menu-area, .order-cart-area, .menu-card, .menu-body, .menu-photo{
+    min-width: 0; max-width: 100%;
+  }
+  /* カテゴリボタンも折り返し可能に */
+  .category-filter{ max-width: 100%; }
+  .cat-btn{ flex: 0 1 auto; min-width: 0; }
+}
