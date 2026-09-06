@@ -18,6 +18,22 @@
         <tr><th>合計金額</th><td>¥{{ "{:,}".format(order["total"]) }}</td></tr>
       </table>
 
+      {% set linked = pay_items | selectattr("pay_url") | list %}
+      {% if linked %}
+      <div class="next-step pay-now">
+        <h2>💳 お支払い</h2>
+        <p>そのまま、以下のボタンからお支払いいただけます（Airペイの安全な決済画面に移ります）。</p>
+        {% for it in linked %}
+        <a href="{{ it.pay_url }}" target="_blank" rel="noopener" class="btn btn-gold pay-btn">
+          💳 {{ it.name }}{% if it.qty > 1 %} × {{ it.qty }}{% endif %}　¥{{ "{:,}".format(it.price * it.qty) }} を支払う
+        </a>
+        {% endfor %}
+        {% if pay_items | rejectattr("pay_url") | list %}
+        <p class="pay-note">※ 上記以外の商品の決済リンクは、店舗より別途お送りします。</p>
+        {% endif %}
+        <p class="pay-note">お支払い完了後、ご希望のタイミングで開栓いたします。Instagramライブ配信のご案内もお送りします。</p>
+      </div>
+      {% else %}
       <div class="next-step">
         <h2>次のステップ</h2>
         <ol>
@@ -26,6 +42,7 @@
           <li>ご入金確認後、ご希望のタイミングで開栓いたします。Instagramライブ配信のご案内もお送りします。</li>
         </ol>
       </div>
+      {% endif %}
       {% else %}
       <p>ご注文情報が見つかりませんでした。お手数ですが店舗までお問い合わせください。</p>
       {% endif %}

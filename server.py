@@ -106,7 +106,29 @@ init_db()
 
 def load_menu():
     with open(os.path.join(DATA_DIR, "menu.json"), encoding="utf-8") as f:
-        return json.load(f)
+        menu = json.load(f)
+    # 商品ごとのAirペイ決済リンク（paylinks.json）をマージ
+    links = load_paylinks()
+    for item in menu.get("items", []):
+        item["pay_url"] = links.get(item["id"], "")
+    return menu
+
+
+# ------------------------------------------------- Airペイ決済リンク（商品ごと）
+PAYLINKS_PATH = os.path.join(DATA_DIR, "paylinks.json")
+
+def load_paylinks():
+    """{商品id: Airペイ決済URL} の辞書を返す"""
+    try:
+        with open(PAYLINKS_PATH, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+def save_paylinks(links):
+    os.makedirs(DATA_DIR, exist_ok=True)
+    with open(PAYLINKS_PATH, "w", encoding="utf-8") as f:
+        json.dump(links, f, ensure_ascii=False, indent=2)
 
 # ---------------------------------------------------------------- Realtime (SSE)
 
@@ -244,7 +266,14 @@ def order_success():
     conn = db()
     order = conn.execute("SELECT * FROM orders WHERE id=?", (order_id,)).fetchone()
     conn.close()
-    return render_template("success.html", shop=SHOP, order=order)
+    # 注文明細の各商品に、設定済みのAirペイ決済リンクを付ける
+    paylinks = load_paylinks()
+    pay_items = []
+    if order:
+        for it in json.loads(order["items"]):
+            url = paylinks.get(it["id"], "")
+            pay_items.append({**it, "pay_url": url})
+    return render_template("success.html", shop=SHOP, order=order, pay_items=pay_items)
 
 
 # ---------------------------------------------------------------- APIs
@@ -393,7 +422,31 @@ def admin_page():
     key = request.args.get("key", "")
     if key != ADMIN_KEY:
         return "管理者キーが違います。正しいURLでアクセスしてください。", 403
-    return render_template("admin.html", shop=SHOP, key=key, airpay_url=AIRPAY_ADMIN_URL)
+    menu = load_menu()
+    return render_template("admin.html", shop=SHOP, key=key, airpay_url=AIRPAY_ADMIN_URL, menu=menu, paylinks=load_paylinks())
+
+
+@app.route("/api/admin/paylinks", methods=["GET", "POST"])
+def admin_paylinks():
+    """商品ごとのAirペイ決済リンクを保存・取得"""
+    if request.args.get("key") != ADMIN_KEY:
+        return jsonify({"error": "unauthorized"}), 403
+    if request.method == "GET":
+        return jsonify(load_paylinks())
+    body = request.get_json(force=True) or {}
+    item_id = (body.get("id") or "").strip()
+    url = (body.get("url") or "").strip()
+    if not item_id:
+        return jsonify({"error": "id required"}), 400
+    if url and not url.startswith("http"):
+        return jsonify({"error": "invalid url"}), 400
+    links = load_paylinks()
+    if url:
+        links[item_id] = url
+    else:
+        links.pop(item_id, None)  # 空で登録＝リンク解除
+    save_paylinks(links)
+    return jsonify({"ok": True, "links": links})
 
 
 @app.route("/health")

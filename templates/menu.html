@@ -9,7 +9,7 @@
     <div class="section-head">
       <p class="en">BOTTLE MENU</p>
       <h1 style="font-size:1.6rem">ボトルメニュー</h1>
-      <p class="section-note">すべて明朗会計・税込価格です。</p>
+      <p class="section-note">表示はボトルのお値段（税抜）です。ご来店時はセット料金・チャージなどの会計システムがございますが、<a href="/#system" class="link-gold">料金システム</a>はすべて明朗会計でご案内しておりますので、安心してお楽しみください。</p>
     </div>
 
     {% set cats = {
@@ -34,14 +34,7 @@
           <span class="bprice">¥{{ "{:,}".format(item.price) }}</span>
         </li>
         {% endfor %}
-        {% if cat == 'シャンパン' %}
-          {% for item in menu["items"] if item.category == 'シャンパン' %}
-          <li>
-            <span class="bname">{{ item.name }}</span>
-            <span class="bprice">¥{{ "{:,}".format(item.price) }}</span>
-          </li>
-          {% endfor %}
-        {% endif %}
+
       </ul>
     {% endfor %}
 

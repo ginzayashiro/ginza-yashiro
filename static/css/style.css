@@ -842,3 +842,20 @@ p, h1, h2, h3, td, li, .digest-items, .iyasaka-text{
   .category-filter{ max-width: 100%; }
   .cat-btn{ flex: 0 1 auto; min-width: 0; }
 }
+
+/* ===== 遠隔オーダー：価格のお得感ボックス ===== */
+.value-note{
+  max-width:640px;margin:22px auto 0;text-align:center;
+  background:rgba(201,163,91,.10);border:1px solid var(--line);
+  border-radius:var(--radius);padding:20px 24px;
+}
+.value-note-head{color:var(--gold-light);font-size:.95rem;letter-spacing:.08em;margin-bottom:8px;font-weight:600}
+.value-note-body{color:var(--text);font-size:.84rem;line-height:2}
+.value-note-body strong{color:var(--gold-light)}
+
+/* ===== ボトルメニュー：価格の説明を柔らかく ===== */
+.section-note a.link-gold{ text-decoration:underline; text-underline-offset:3px }
+.menu-remote-hint{
+  max-width:560px;margin:14px auto 0;text-align:center;
+  color:var(--gold-light);font-size:.84rem;letter-spacing:.03em;
+}

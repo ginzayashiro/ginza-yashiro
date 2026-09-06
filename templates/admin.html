@@ -19,6 +19,27 @@
 
 <main class="admin-main">
   <p class="admin-hint">このページを開いたままにすると、新しい注文がリアルタイムで表示され、通知音が鳴ります。</p>
+
+  <details class="paylink-settings">
+    <summary>💳 決済リンク設定（Airペイで商品ごとに作ったURLを貼ると、お客様がその場で支払えます）</summary>
+    <div class="paylink-body">
+      <p class="paylink-hint">Airペイ オンライン決済の「決済リンク管理」で商品ごとにリンクを作成し、URLをコピーして下に貼ってください。一度登録すれば毎回の作成は不要です。</p>
+      <table class="paylink-table">
+        <thead><tr><th>商品</th><th>価格</th><th>決済リンクURL</th><th></th></tr></thead>
+        <tbody>
+          {% for item in menu["items"] %}
+          <tr>
+            <td class="pl-name">{{ item.name }}</td>
+            <td class="pl-price">¥{{ "{:,}".format(item.price) }}</td>
+            <td><input type="url" class="pl-input" data-id="{{ item.id }}" value="{{ paylinks.get(item.id, '') }}" placeholder="https://link.airpayment.jp/..."></td>
+            <td><button class="btn-small pl-save" data-id="{{ item.id }}">保存</button></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </details>
+
   <div id="orderList" class="order-list"></div>
 </main>
 
