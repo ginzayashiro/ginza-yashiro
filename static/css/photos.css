@@ -32,13 +32,13 @@
 
    PH-01 店内メイン
 .photo-slot[data-photo="hero-main"]{
-  background-image:url('/static/img/hero-main.jpg');
+  background-image:url('/static/img/opening-toast.jpg');
   background-size:cover; background-position:center; border:none;
 }
 
    PH-02 開栓シーン
 .photo-slot[data-photo="opening-scene"]{
-  background-image:url('/static/img/opening-scene.jpg');
+  background-image:url('/static/img/opening-toast.jpg');
   background-size:cover; background-position:center; border:none;
 }
 
