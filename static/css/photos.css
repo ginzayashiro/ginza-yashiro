@@ -107,3 +107,32 @@
     background-color:#1d1512;
   }
 }
+
+/* mama-photobook の空プレースホルダー（崩れない固定枠） */
+.photo-slot[data-photo="menu-mama-photobook"]{
+  aspect-ratio:3/4;
+  min-height:520px;
+  display:flex; align-items:center; justify-content:center;
+  background:
+    repeating-linear-gradient(45deg, rgba(179,155,107,.06) 0 18px, rgba(179,155,107,.02) 18px 36px),
+    #14110c;
+  border:1px dashed #b39b6b;
+}
+.photo-slot[data-photo="menu-mama-photobook"] .photo-slot-label{
+  display:block;
+  text-align:center;
+  color:#b39b6b;
+  letter-spacing:.2em;
+  padding:24px;
+}
+.photo-slot[data-photo="menu-mama-photobook"] .photo-slot-label small{
+  display:block; margin-top:8px; color:#b39b6b;
+  font-size:.78rem; letter-spacing:.05em;
+}
+
+/* photo book 専用の文言（全画面では見えないようにする場合は追加） */
+
+/* 店内写真は枠に合わせず、写真それぞれの自然サイズで表示 */
+.gallery-grid{ grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); align-items:start; }
+.gallery-img{ width:100% !important; height:auto !important; display:block; border-radius:8px; }
+#gallery .gallery-lead .photo-slot{ background-size:contain !important; background-repeat:no-repeat; background-position:center; aspect-ratio:auto; min-height:0; height:auto; }

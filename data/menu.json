@@ -14,39 +14,21 @@
   ],
   "items": [
     {
-      "id": "pj-brut",
-      "name": "ペリエ ジュエ グラン ブリュット",
-      "category": "シャンパン",
-      "price": 30800,
-      "photo": "img/remote/01_perrier_jouet_grand_brut.jpg",
-      "description": "華やかでやさしい泡立ち。まずはこの一本から。",
-      "has_photo": true
-    },
-    {
-      "id": "pj-bdb",
-      "name": "ペリエ ジュエ ブラン・ド・ブラン",
-      "category": "シャンパン",
-      "price": 44000,
-      "photo": "img/remote/02_perrier_jouet_blanc_de_blancs.jpg",
-      "description": "シャルドネ100%の気品ある逸品。",
-      "has_photo": true
-    },
-    {
-      "id": "lp-ultra",
-      "name": "ローランペリエ ウルトラブリュット",
-      "category": "シャンパン",
-      "price": 66000,
-      "photo": "img/remote/03_laurent_perrier_ultra_brut.jpg",
-      "description": "糖分ゼロの究極の辛口。",
-      "has_photo": true
-    },
-    {
       "id": "pj-belle",
       "name": "ペリエ ジュエ ベル エポック",
       "category": "シャンパン",
       "price": 88000,
       "photo": "img/remote/04_perrier_jouet_belle_epoque.jpg",
       "description": "アネモネの花のボトル。記念日に。",
+      "has_photo": true
+    },
+    {
+      "id": "pj-brut",
+      "name": "ペリエ ジュエ グラン ブリュット",
+      "category": "シャンパン",
+      "price": 30800,
+      "photo": "img/remote/01_perrier_jouet_grand_brut.jpg",
+      "description": "華やかでやさしい泡立ち。まずはこの一本から。",
       "has_photo": true
     },
     {
@@ -59,12 +41,12 @@
       "has_photo": true
     },
     {
-      "id": "pj-belle-flor",
-      "name": "ペリエ ジュエ ベル エポック フロレサンス",
+      "id": "mumm-rsrv-bdb",
+      "name": "メゾン マム RSRV ブラン・ド・ブラン",
       "category": "シャンパン",
-      "price": 121000,
-      "photo": "img/remote/07_belle_epoque_florale.jpg",
-      "description": "ベル エポックの特別版。華やかな記念日に。",
+      "price": 38500,
+      "photo": "img/remote/08_mumm_rsrv_blanc_de_blancs.jpg",
+      "description": "シャルドネの卓越性を表現した、フレッシュでミネラル豊かなキュヴェ。",
       "has_photo": true
     },
     {
@@ -77,13 +59,58 @@
       "has_photo": true
     },
     {
-      "id": "mumm-rsrv-bdb",
-      "name": "メゾン マム RSRV ブラン・ド・ブラン",
+      "id": "lp-rose",
       "category": "シャンパン",
-      "price": 38500,
-      "photo": "img/remote/08_mumm_rsrv_blanc_de_blancs.jpg",
-      "description": "シャルドネの卓越性を表現した、フレッシュでミネラル豊かなキュヴェ。",
+      "name": "ローランペリエ ロゼ",
+      "description": "美しいサーモンピンク。華やかな祝いの席に。",
+      "price": 58300,
+      "has_photo": false,
+      "stock": true
+    },
+    {
+      "id": "krug",
+      "category": "シャンパン",
+      "name": "クリュッグ",
+      "description": "シャンパンの帝王。格別の一本を。",
+      "price": 132000,
+      "has_photo": false,
+      "stock": true
+    },
+    {
+      "id": "lp-ultra",
+      "name": "ローランペリエ ウルトラブリュット",
+      "category": "シャンパン",
+      "price": 66000,
+      "photo": "img/remote/03_laurent_perrier_ultra_brut.jpg",
+      "description": "糖分ゼロの究極の辛口。",
       "has_photo": true
+    },
+    {
+      "id": "cristal",
+      "category": "シャンパン",
+      "name": "クリスタル",
+      "description": "ルイ・ロデレールの至宝。透明ボトルの輝き。",
+      "price": 220000,
+      "has_photo": false,
+      "stock": true
+    },
+    {
+      "id": "pj-bdb",
+      "name": "ペリエ ジュエ ブラン・ド・ブラン",
+      "category": "シャンパン",
+      "price": 44000,
+      "photo": "img/remote/02_perrier_jouet_blanc_de_blancs.jpg",
+      "description": "シャルドネ100%の気品ある逸品。",
+      "has_photo": true
+    },
+    {
+      "id": "krug-rose",
+      "category": "シャンパン",
+      "name": "クリュッグ ロゼ",
+      "description": "クリュッグの最高峰ロゼ。記憶に残る夜に。",
+      "price": 187000,
+      "has_photo": false,
+      "stock": true
     },
     {
       "id": "mumm-rsrv-lalou",
@@ -92,6 +119,24 @@
       "price": 77000,
       "photo": "img/remote/09_mumm_rsrv_cuvee_lalou.jpg",
       "description": "メゾンの誇るプレステージュ・キュヴェ。",
+      "has_photo": true
+    },
+    {
+      "id": "dom-rose",
+      "category": "シャンパン",
+      "name": "ドン ペリニヨン ロゼ",
+      "description": "ドン ペリニヨンの気高きロゼ。",
+      "price": 181500,
+      "has_photo": false,
+      "stock": true
+    },
+    {
+      "id": "pj-belle-flor",
+      "name": "ペリエ ジュエ ベル エポック フロレサンス",
+      "category": "シャンパン",
+      "price": 121000,
+      "photo": "img/remote/07_belle_epoque_florale.jpg",
+      "description": "ベル エポックの特別版。華やかな記念日に。",
       "has_photo": true
     },
     {
@@ -138,9 +183,9 @@
       "id": "fun-other",
       "name": "その他（リクエスト）",
       "category": "仮装オンラインリクエスト",
-      "price": 3300,
+      "price": 10500,
       "photo": "img/remote/17_kasou_sonota_request.jpg",
-      "description": "やってほしい仮装をメッセージでご相談ください。",
+      "description": "やってほしい仮装をメッセージでご相談ください。※過激なものはNGとさせていただきます🙏",
       "fun": true,
       "has_photo": true
     },
@@ -447,14 +492,6 @@
       "category": "ワイン（赤）",
       "price": 30000,
       "photo": "img/menu/bouchard-gevre.jpg",
-      "description": ""
-    },
-    {
-      "id": "iw-harper12",
-      "name": "I.W.ハーパー12年",
-      "category": "ウイスキー",
-      "price": 30000,
-      "photo": "img/menu/iw-harper12.jpg",
       "description": ""
     },
     {
