@@ -381,7 +381,7 @@ p, h1, h2, h3, td, li, .digest-items, .iyasaka-text{
 /* ---------- スタッフ ---------- */
 .staff-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:28px}
 .staff-card{text-align:center}
-.staff-photo{min-height:260px;margin-bottom:14px}
+.staff-photo{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center;display:block;margin-bottom:14px;border:none;border-radius:8px}
 .staff-name{font-family:var(--serif);font-size:1.05rem;letter-spacing:.1em;color:var(--gold-light)}
 
 /* ---------- ライブ配信 ---------- */
