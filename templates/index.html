@@ -64,7 +64,7 @@
     </div>
     <div class="mama-grid">
       <!-- 📷 写真: ママのオフィシャル写真（設定済み） -->
-      <div class="photo-slot mama-photo-small has-photo" data-photo="mama-portrait" role="img" aria-label="オーナーママ 屋代佳織" style="background-image:url('/static/img/mama-portrait.jpg');background-size:cover;background-position:center 35%;"></div>
+      <img src="{{ url_for('static', filename='img/mama-portrait.jpg') }}" alt="オーナーママ 屋代佳織" class="mama-photo" style="width:100%;height:auto;border-radius:8px;display:block;">
       <div class="mama-text">
         <p class="mama-intro">1975年、茨城に生まれ、<br>
         幼い頃から、身体で表現することを覚えました。<br>
@@ -336,18 +336,22 @@
         <p class="staff-name">オーナーママ 佳織</p>
       </div>
       <div class="staff-card">
-        <div class="photo-slot staff-photo has-photo" data-photo="staff-1" role="img" aria-label="スタッフ A" style="background-image:url('/static/img/staff-1.jpg');background-size:cover;background-position:center;"></div>
+        <img src="{{ url_for('static', filename='img/staff-1.jpg') }}" alt="スタッフ 1" class="staff-photo" style="width:100%;height:auto;border-radius:8px;display:block;">
         <p class="staff-name">スタッフ A</p>
       </div>
       <div class="staff-card">
-        <div class="photo-slot staff-photo has-photo" data-photo="staff-2" role="img" aria-label="スタッフ B" style="background-image:url('/static/img/staff-2.jpg');background-size:cover;background-position:center;"></div>
+        <img src="{{ url_for('static', filename='img/staff-2.jpg') }}" alt="スタッフ 2" class="staff-photo" style="width:100%;height:auto;border-radius:8px;display:block;">
         <p class="staff-name">スタッフ B</p>
       </div>
       <div class="staff-card">
-        <div class="photo-slot staff-photo has-photo" data-photo="staff-3" role="img" aria-label="スタッフ C" style="background-image:url('/static/img/staff-3.jpg');background-size:cover;background-position:center;"></div>
+        <img src="{{ url_for('static', filename='img/staff-3.jpg') }}" alt="スタッフ 3" class="staff-photo" style="width:100%;height:auto;border-radius:8px;display:block;">
         <p class="staff-name">スタッフ C</p>
       </div>
-    </div>
+    
+      <div class="staff-card">
+        <img src="{{ url_for('static', filename='img/staff-4.jpg') }}" alt="スタッフ 4" class="staff-photo" style="width:100%;height:auto;border-radius:8px;display:block;">
+        <p class="staff-name">スタッフ D</p>
+      </div></div>
     <p class="section-note center">※ ママとスタッフ一同、皆様のお越しをお待ちしております。</p>
   </div>
 </section>
