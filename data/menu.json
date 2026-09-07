@@ -8,6 +8,7 @@
   ],
   "categories": [
     "シャンパン",
+    "お飲み物",
     "仮装オンラインリクエスト",
     "写真集"
   ],
@@ -17,7 +18,7 @@
       "name": "ペリエ ジュエ グラン ブリュット",
       "category": "シャンパン",
       "price": 30800,
-      "photo": "img/menu/pj-brut.jpg",
+      "photo": "img/remote/01_perrier_jouet_grand_brut.jpg",
       "description": "華やかでやさしい泡立ち。まずはこの一本から。",
       "has_photo": true
     },
@@ -26,7 +27,7 @@
       "name": "ペリエ ジュエ ブラン・ド・ブラン",
       "category": "シャンパン",
       "price": 44000,
-      "photo": "img/menu/pj-bdb.jpg",
+      "photo": "img/remote/02_perrier_jouet_blanc_de_blancs.jpg",
       "description": "シャルドネ100%の気品ある逸品。",
       "has_photo": true
     },
@@ -35,7 +36,7 @@
       "name": "ローランペリエ ウルトラブリュット",
       "category": "シャンパン",
       "price": 66000,
-      "photo": "img/menu/lp-ultra.jpg",
+      "photo": "img/remote/03_laurent_perrier_ultra_brut.jpg",
       "description": "糖分ゼロの究極の辛口。",
       "has_photo": true
     },
@@ -44,7 +45,7 @@
       "name": "ペリエ ジュエ ベル エポック",
       "category": "シャンパン",
       "price": 88000,
-      "photo": "img/menu/pj-belle.jpg",
+      "photo": "img/remote/04_perrier_jouet_belle_epoque.jpg",
       "description": "アネモネの花のボトル。記念日に。",
       "has_photo": true
     },
@@ -53,7 +54,7 @@
       "name": "ドン ペリニヨン",
       "category": "シャンパン",
       "price": 110000,
-      "photo": "img/menu/dom.jpg",
+      "photo": "img/remote/05_dom_perignon.jpg",
       "description": "特別な夜に。最高級ヴィンテージシャンパン。",
       "has_photo": true
     },
@@ -62,16 +63,16 @@
       "name": "ペリエ ジュエ ベル エポック フロレサンス",
       "category": "シャンパン",
       "price": 121000,
-      "photo": "",
+      "photo": "img/remote/07_belle_epoque_florale.jpg",
       "description": "ベル エポックの特別版。華やかな記念日に。",
-      "has_photo": false
+      "has_photo": true
     },
     {
       "id": "armand-gold",
       "name": "アルマン ド ブリニャック ゴールド",
       "category": "シャンパン",
       "price": 275000,
-      "photo": "img/menu/armand-gold.jpg",
+      "photo": "img/remote/06_armand_de_brignac_gold.jpg",
       "description": "黄金のボトル。特別な夜の主役。",
       "has_photo": true
     },
@@ -80,71 +81,123 @@
       "name": "メゾン マム RSRV ブラン・ド・ブラン",
       "category": "シャンパン",
       "price": 38500,
-      "photo": "",
+      "photo": "img/remote/08_mumm_rsrv_blanc_de_blancs.jpg",
       "description": "シャルドネの卓越性を表現した、フレッシュでミネラル豊かなキュヴェ。",
-      "has_photo": false
+      "has_photo": true
     },
     {
       "id": "mumm-rsrv-lalou",
       "name": "メゾン マム RSRV キュヴェ ラルー",
       "category": "シャンパン",
       "price": 77000,
-      "photo": "",
+      "photo": "img/remote/09_mumm_rsrv_cuvee_lalou.jpg",
       "description": "メゾンの誇るプレステージュ・キュヴェ。",
-      "has_photo": false
+      "has_photo": true
     },
     {
       "id": "afro-yousui",
       "name": "アフロ&サングラス（井上陽水）",
       "category": "仮装オンラインリクエスト",
-      "price": 1100,
-      "photo": "",
+      "price": 3300,
+      "photo": "img/remote/13_kasou_afro_sunglasses.jpg",
       "description": "ママがアフロ&サングラスで歌います。陽水気分でどうぞ🕶️",
-      "fun": true
+      "fun": true,
+      "has_photo": true
     },
     {
       "id": "baka-tono",
       "name": "馬鹿殿ちょんまげ",
       "category": "仮装オンラインリクエスト",
-      "price": 1100,
-      "photo": "",
+      "price": 3300,
+      "photo": "img/remote/14_kasou_bakadono_chonmage.jpg",
       "description": "ちょんまげ姿でお出迎え。笑いの神様、降臨です🎌",
-      "fun": true
+      "fun": true,
+      "has_photo": true
     },
     {
       "id": "china-dress",
       "name": "チャイナドレス",
       "category": "仮装オンラインリクエスト",
-      "price": 1100,
-      "photo": "",
+      "price": 3300,
+      "photo": "img/remote/15_kasou_china_dress.jpg",
       "description": "ママがチャイナドレス姿でおもてなし🐼",
-      "fun": true
+      "fun": true,
+      "has_photo": true
     },
     {
       "id": "school-uniform",
       "name": "学生服",
       "category": "仮装オンラインリクエスト",
-      "price": 1100,
-      "photo": "",
+      "price": 3300,
+      "photo": "img/remote/16_kasou_gakuseifuku.jpg",
       "description": "あの頃にタイムスリップ。学生服でお出迎え🎒",
-      "fun": true
+      "fun": true,
+      "has_photo": true
     },
     {
       "id": "fun-other",
       "name": "その他（リクエスト）",
       "category": "仮装オンラインリクエスト",
-      "price": 1100,
-      "photo": "",
+      "price": 3300,
+      "photo": "img/remote/17_kasou_sonota_request.jpg",
       "description": "やってほしい仮装をメッセージでご相談ください。",
-      "fun": true
+      "fun": true,
+      "has_photo": true
     },
     {
       "id": "mama-photobook",
       "name": "ママ50歳記念写真集",
       "category": "写真集",
       "price": 5500,
-      "photo": "img/menu/photobook.jpg",
-      "description": "数量限定。ママの節目を収めた特別な一冊です📖"
+      "description": "数量限定。ママの節目を収めた特別な一冊です📖",
+      "has_photo": false
+    },
+    {
+      "id": "superdry-kobin",
+      "category": "お飲み物",
+      "name": "瓶ビール（スーパードライ小瓶）",
+      "description": "キレのある一杯。まずはビールで乾杯。",
+      "price": 3300,
+      "has_photo": true,
+      "photo": "img/remote/20_superdry_kobin.jpg"
+    },
+    {
+      "id": "mizuwari",
+      "category": "お飲み物",
+      "name": "水割り",
+      "description": "蔦柄のタンブラーで、やさしい一杯を。",
+      "price": 3300,
+      "has_photo": true,
+      "photo": "img/remote/19_mizuwari_tumbler.jpg"
+    },
+    {
+      "id": "glass-wine",
+      "category": "お飲み物",
+      "name": "グラスワイン",
+      "description": "深みのある赤を、グラスで気軽に。",
+      "price": 3300,
+      "has_photo": true,
+      "photo": "img/remote/21_glass_wine.jpg"
+    },
+    {
+      "category": "ショットグラス",
+      "name": "ショットグラス",
+      "description": "琥珀色の一杯を、ショットグラスで。",
+      "price": 3300,
+      "has_photo": true,
+      "photo": "img/remote/18_shot_glass.jpg",
+      "id": 1,
+      "stock": true
+    },
+    {
+      "category": "ケーキ",
+      "name": "バースデーケーキ",
+      "description": "お誕生日のサプライズに。キャンドルを灯してお届けします🎂",
+      "price": 10500,
+      "has_photo": true,
+      "photo": "img/remote/22_birthday_cake.jpg",
+      "id": 2,
+      "stock": true
     }
   ],
   "bottle_menu": [
