@@ -64,8 +64,9 @@
       "name": "ローランペリエ ロゼ",
       "description": "美しいサーモンピンク。華やかな祝いの席に。",
       "price": 58300,
-      "has_photo": false,
-      "stock": true
+      "has_photo": true,
+      "stock": true,
+      "photo": "img/remote/23_lp_rose.jpg"
     },
     {
       "id": "krug",
@@ -73,8 +74,9 @@
       "name": "クリュッグ",
       "description": "シャンパンの帝王。格別の一本を。",
       "price": 132000,
-      "has_photo": false,
-      "stock": true
+      "has_photo": true,
+      "stock": true,
+      "photo": "img/remote/24_krug.jpg"
     },
     {
       "id": "lp-ultra",
@@ -91,8 +93,9 @@
       "name": "クリスタル",
       "description": "ルイ・ロデレールの至宝。透明ボトルの輝き。",
       "price": 220000,
-      "has_photo": false,
-      "stock": true
+      "has_photo": true,
+      "stock": true,
+      "photo": "img/remote/25_cristal.jpg"
     },
     {
       "id": "pj-bdb",
@@ -109,8 +112,9 @@
       "name": "クリュッグ ロゼ",
       "description": "クリュッグの最高峰ロゼ。記憶に残る夜に。",
       "price": 187000,
-      "has_photo": false,
-      "stock": true
+      "has_photo": true,
+      "stock": true,
+      "photo": "img/remote/26_krug_rose.jpg"
     },
     {
       "id": "mumm-rsrv-lalou",
@@ -127,8 +131,9 @@
       "name": "ドン ペリニヨン ロゼ",
       "description": "ドン ペリニヨンの気高きロゼ。",
       "price": 181500,
-      "has_photo": false,
-      "stock": true
+      "has_photo": true,
+      "stock": true,
+      "photo": "img/remote/27_dom_perignon_rose.jpg"
     },
     {
       "id": "pj-belle-flor",
@@ -243,6 +248,16 @@
       "photo": "img/remote/22_birthday_cake.jpg",
       "id": 2,
       "stock": true
+    },
+    {
+      "id": "chablis",
+      "category": "白ワイン",
+      "name": "シャブリ（ウィリアム フェーブル）",
+      "description": "キレのある辛口。魚介にも合う爽やかな一本。",
+      "price": 22000,
+      "has_photo": true,
+      "stock": true,
+      "photo": "img/remote/28_chablis.jpg"
     }
   ],
   "bottle_menu": [
