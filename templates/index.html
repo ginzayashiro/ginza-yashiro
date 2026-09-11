@@ -254,7 +254,8 @@
   <div class="container">
     <div class="section-head">
       <p class="en">GALLERY</p>
-      <h2>店内の雰囲気</h2>
+      <h2>ギャラリー</h2>
+      <p class="section-note center" style="margin-top:14px;">銀座の夜に、笑顔と乾杯があふれる場所。<br>やしろの店内の風景と、楽しいひとときをご覧ください🥂</p>
     </div>
     <!-- ボックス席全体（U字ソファー）— ギャラリーの顔として横幅いっぱいに -->
     <div class="gallery-lead">
@@ -272,17 +273,38 @@
       <p class="seat-guide-note">メニュー以外のリクエストも、店頭にてお気軽にご相談ください。</p>
     </div>
     <div class="gallery-grid">
-      <img src="/static/img/tennai.jpg" alt="店内の様子" class="gallery-img" style="width:100%;height:auto;display:block;border-radius:8px;">
-      <!-- カウンター席（バックバー正面・横構図） -->
-      <img src="/static/img/counter.jpg" alt="カウンター席" class="gallery-img" style="width:100%;height:auto;display:block;border-radius:8px;">
-      <!-- 📷 PH-05: ボックス席・テーブル。グラスと照明を入れて雰囲気重視。横構図 -->
-      <img src="/static/img/table.jpg" alt="奥ボックス席" class="gallery-img" style="width:100%;height:auto;display:block;border-radius:8px;">
-      <!-- 手前ボックス席 -->
-      <img src="/static/img/box-front.jpg" alt="手前ボックス席" class="gallery-img" style="width:100%;height:auto;display:block;border-radius:8px;">
-      <!-- 装飾①（花と絵画） -->
-      <img src="/static/img/bottles.jpg" alt="店内装飾" class="gallery-img" style="width:100%;height:auto;display:block;border-radius:8px;">
-      <!-- 装飾②（ピンクの羽と花） -->
-      <img src="/static/img/entrance.jpg" alt="店内装飾" class="gallery-img" style="width:100%;height:auto;display:block;border-radius:8px;">
+      <img src="{{ url_for('static', filename='img/gallery/g_box_balloon.jpg') }}" alt="バルーン装飾のボックス席" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/counter.jpg') }}" alt="カウンター席" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/table.jpg') }}" alt="奥のボックス席" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/box-front.jpg') }}" alt="手前のボックス席" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/gallery/g_birthday_seat.jpg') }}" alt="お誕生日のお席" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/bottles.jpg') }}" alt="ボトル棚" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/gallery/g_whiskey_cat.jpg') }}" alt="白州・響・マッカランと招き猫" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/gallery/g_bottles_shelf.jpg') }}" alt="ウイスキー棚" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/entrance.jpg') }}" alt="入口" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/gallery/g_candle.jpg') }}" alt="灯りのある店内" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/gallery/g_cat_lamp.jpg') }}" alt="猫のランプ" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/gallery/g_crystal.jpg') }}" alt="クリスタルの置物" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/gallery/g_walllamp.jpg') }}" alt="壁のブラケットライト" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/gallery/g_orchid_card.jpg') }}" alt="お祝いの蘭とメッセージカード" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/tennai.jpg') }}" alt="店内の様子" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/gallery/g_wide_party.jpg') }}" alt="みんなで乾杯" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/gallery/g_karaoke_trio.jpg') }}" alt="カラオケで盛り上がるひととき" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/gallery/g_party_table.jpg') }}" alt="テーブルを囲んで" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/gallery/g_kimono_pour.jpg') }}" alt="和装でシャンパンをお注ぎします" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/gallery/g_dom_girl.jpg') }}" alt="ボトルをお持ちします" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/gallery/g_balloon_group.jpg') }}" alt="バルーンに囲まれて" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/gallery/g_counter_stage.jpg') }}" alt="カウンター越しの笑顔" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/gallery/g_party_laugh.jpg') }}" alt="笑い声の絶えない夜" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/gallery/g_cheers_hands.jpg') }}" alt="乾杯の瞬間" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/gallery/g_mike_girl.jpg') }}" alt="マイクで歌って" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/gallery/g_pink_group.jpg') }}" alt="ピンクのドレスでおもてなし" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/gallery/g_counter_man.jpg') }}" alt="カウンターでの一杯" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/gallery/g_kimono_pink.jpg') }}" alt="和装とドレスで" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/gallery/g_pink_back.jpg') }}" alt="カウンターの様子" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/gallery/g_mama_kimono.jpg') }}" alt="ママと和装スタッフ" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/gallery/g_bubble_balloon.jpg') }}" alt="店内いっぱいのバルーン" class="gallery-photo">
+      <img src="{{ url_for('static', filename='img/gallery/g_balloon_counter.jpg') }}" alt="にぎやかなカウンター" class="gallery-photo">
     </div>
   </div>
 </section>
@@ -323,42 +345,14 @@
   </div>
 </section>
 
-<!-- ============ 店舗内雰囲気 ============ -->
-<section class="section" id="staff">
-  <div class="container">
-    <div class="section-head">
-      <p class="en">ATMOSPHERE</p>
-      <h2>店舗内雰囲気</h2>
-    </div>
-    <div class="staff-grid">
-      <div class="staff-card">
-        <img src="{{ url_for('static', filename='img/mama-staff.jpg') }}" alt="オーナーママ 佳織" class="staff-photo">
-        <p class="staff-name">オーナーママ 佳織</p>
-      </div>
-      <div class="staff-card">
-        <img src="{{ url_for('static', filename='img/staff-1.jpg') }}" alt="店内の様子 1" class="staff-photo">
-        <p class="staff-name">乾杯のひととき</p>
-      </div>
-      <div class="staff-card">
-        <img src="{{ url_for('static', filename='img/staff-2.jpg') }}" alt="店内の様子 2" class="staff-photo">
-        <p class="staff-name">カウンターにて</p>
-      </div>
-      <div class="staff-card">
-        <img src="{{ url_for('static', filename='img/staff-3.jpg') }}" alt="店内の様子 3" class="staff-photo">
-        <p class="staff-name">カラオケ</p>
-      </div>
-      <div class="staff-card">
-        <img src="{{ url_for('static', filename='img/staff-4.jpg') }}" alt="店内の様子 4" class="staff-photo">
-        <p class="staff-name">談笑</p>
-      </div>
-    </div>
-    <p class="section-note center">※ ママとスタッフ一同、皆様のお越しをお待ちしております。</p>
-  </div>
-</section>
-
 <!-- ============ ライブ配信（Instagram） ============ -->
 <section class="section section-dark" id="live">
   <div class="container">
+    <div class="center" style="margin:26px 0 8px;">
+      <img src="{{ url_for('static', filename='img/mama-staff.jpg') }}" alt="オーナーママ 佳織" style="width:min(320px,82%);border-radius:14px;display:inline-block;">
+      <p class="staff-name" style="margin-top:10px;">オーナーママ 佳織</p>
+    </div>
+
     <div class="section-head">
       <p class="en">LIVE STREAMING</p>
       <h2>Instagramライブ配信</h2>
