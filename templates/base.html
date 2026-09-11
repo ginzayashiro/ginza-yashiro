@@ -74,7 +74,7 @@
       <a href="/#first-visit">初めての方へ</a>
       <a href="/{% if request.args.get('preview') == '1' %}?preview=1{% endif %}#menu">メニュー</a>
       <a href="/menu{% if request.args.get('preview') == '1' %}?preview=1{% endif %}">ボトル一覧</a>
-      <a href="/{% if request.args.get('preview') == '1' %}?preview=1{% endif %}#staff">スタッフ</a>
+      <a href="/{% if request.args.get('preview') == '1' %}?preview=1{% endif %}#gallery">ギャラリー</a>
       <a href="/{% if request.args.get('preview') == '1' %}?preview=1{% endif %}#access">アクセス</a>
       <a href="/recruit">採用情報</a>
       <a href="/order{% if request.args.get('preview') == '1' %}?preview=1{% endif %}" class="nav-cta">遠隔オーダー</a>
@@ -128,5 +128,6 @@
 
 <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 {% block scripts %}{% endblock %}
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
 </body>
 </html>
