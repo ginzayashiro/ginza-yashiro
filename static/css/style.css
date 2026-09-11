@@ -888,3 +888,6 @@ p, h1, h2, h3, td, li, .digest-items, .iyasaka-text{
   .menu-card .menu-name, .menu-card h3{ font-size:1rem; }
   .menu-card .menu-desc{ font-size:.85rem; }
 }
+
+/* ギャラリー写真 */
+.gallery-photo{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;display:block;border-radius:10px;background:#1d1512}
